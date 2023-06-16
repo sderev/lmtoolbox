@@ -2,7 +2,7 @@
 
 ShellGenius is an intuitive CLI tool designed to enhance your command-line experience by turning your task descriptions into efficient shell commands. It generates accurate commands based on your input and provides step-by-step explanations to help you understand the underlying logic.
 
-![shellgenius_1](https://github.com/sderev/llm-toolbox/assets/24412384/30589efb-dac3-4a47-8cb9-e4d69cbbd22a)
+![shellgenius_1](https://github.com/sderev/llm-toolbox/assets/24412384/9b3c99f7-81a7-4305-9b85-cfd01b7252d4)
 
 <!-- TOC -->
 ## Table of Contents
