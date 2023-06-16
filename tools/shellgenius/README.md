@@ -4,6 +4,14 @@ ShellGenius is an intuitive CLI tool designed to enhance your command-line exper
 
 ![shellgenius_1](https://github.com/sderev/llm-toolbox/assets/24412384/30589efb-dac3-4a47-8cb9-e4d69cbbd22a)
 
+<!-- TOC -->
+## Table of Contents
+
+1. [Installation](#installation)
+1. [Usage](#usage)
+1. [Issues](#issues)
+<!-- /TOC -->
+
 ## Installation
 
 ShellGenius has its own installation process. For installation details and the guide to get started, please visit its dedicated repository at [https://github.com/sderev/shellgenius](https://github.com/sderev/shellgenius).
