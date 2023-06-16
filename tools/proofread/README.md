@@ -1,6 +1,6 @@
 # `proofread`
 
-The `proofread` script takes a text as input and provides a corrected version of it, if needed, along with an explanation of the corrections. 
+The `proofread` script takes a text as input and provides a corrected version of it, if needed, along with an explanation of the corrections.
 
 <!-- TOC -->
 ## Table of Contents
@@ -53,6 +53,9 @@ You can pass arguments as the following:
 proofread "Him and me are going to the store."
 ```
 
+![proofread_english_1](https://github.com/sderev/llm-toolbox/assets/24412384/d3ec4f50-1f1c-433e-b3d4-cbb7f51c91b3)
+
+
 Or via `stdin` by using a pipe:
 
 ```bash
@@ -77,3 +80,4 @@ For more informations about the options like `-4`, you can run `llm --help` or r
 
 In that case, you can open the script and add in the prompt something like this: "Respond in French".
 
+![proofread_french](https://github.com/sderev/llm-toolbox/assets/24412384/f21e7f5f-e520-4bce-997f-1acbea5a4b93)
