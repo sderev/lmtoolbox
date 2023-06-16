@@ -75,7 +75,3 @@ The current prompt is set to French and English.
 
 You can change this behavior by editing the prompt in the script with your desired pair of languages.
 
-## Example
-
-Provide an example of the tool usage.
-

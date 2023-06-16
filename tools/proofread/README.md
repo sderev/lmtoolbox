@@ -77,7 +77,3 @@ For more informations about the options like `-4`, you can run `llm --help` or r
 
 In that case, you can open the script and add in the prompt something like this: "Respond in French".
 
-## Example
-
-Provide an example of the tool usage.
-

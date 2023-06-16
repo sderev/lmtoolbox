@@ -61,7 +61,3 @@ echo "a thing" | thesaurus
 
 The latter example is a bit contrived, but it would work.
 
-## Example
-
-Provide an example of the tool usage.
-
