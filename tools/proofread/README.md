@@ -54,8 +54,7 @@ You can pass arguments as the following:
 proofread "Him and me are going to the store."
 ```
 
-![proofread_english_1](https://github.com/sderev/llm-toolbox/assets/24412384/d3ec4f50-1f1c-433e-b3d4-cbb7f51c91b3)
-
+![proofread_english_1](https://github.com/sderev/llm-toolbox/assets/24412384/74e14a66-748f-4334-b1b4-cb511c80287c)
 
 Or via `stdin` by using a pipe:
 
@@ -81,4 +80,4 @@ For more informations about the options like `-4`, you can run `llm --help` or r
 
 In that case, you can open the script and add in the prompt something like this: "Respond in French".
 
-![proofread_french](https://github.com/sderev/llm-toolbox/assets/24412384/f21e7f5f-e520-4bce-997f-1acbea5a4b93)
+![proofread_french](https://github.com/sderev/llm-toolbox/assets/24412384/3bd02d3e-e8ce-4756-a3e1-b4a55475226c)
