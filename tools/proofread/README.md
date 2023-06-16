@@ -10,6 +10,9 @@ The `proofread` script takes a text as input and provides a corrected version of
     1. [Linux/macOS](#linuxmacos)
     1. [Windows](#windows)
 1. [Usage](#usage)
+    1. [Improve the Quality of the Response](#improve-the-quality-of-the-response)
+    1. [Spell Checking a Word](#spell-checking-a-word)
+    1. [Changing the Language of the Response](#changing-the-language-of-the-response)
 <!-- /TOC -->
 
 ## Prerequisites
@@ -73,6 +76,25 @@ proofread "This have a mistake" -4
 That last example might pose a problem to `gpt-3.5-turbo`, but `gpt-4` will answer appropriately.
 
 For more informations about the options like `-4`, you can run `llm --help` or read the documentation on [the GitHub repository of `llm`](https://github.com/simonw/llm).
+
+### Spell Checking a Word
+
+The `proofread` tool is designed to review and correct complete sentences to understand the context and provide the best suggestions. Thus, at times, `proofread` might complain that you didn't give it a complete sentence. If that happens, you can still accomplish your goal with a slight modification to your instruction. For example:
+
+**Complaining**:
+
+```
+% proofread mispell
+I'm sorry, but you have not provided any text or sentence to review and correct. Please provide me with the text or sentence so that I can assist you.
+```
+**Success**:
+
+```
+% proofread "Just the word: mispell"
+Correction: misspell.
+
+Reason: The word "misspell" is spelled with double "s", not "i". The correct spelling of the word means to spell a word incorrectly.
+```
 
 ### Changing the Language of the Response
 
