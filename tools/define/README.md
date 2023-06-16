@@ -47,13 +47,19 @@ You can choose a directory to store your scripts (for example, `C:\scripts`) and
 
 ## Usage
 
-You can pass arguments as the following:
+**You can pass arguments as the following:**
 
 ```bash
 define a proclivity
 ```
 
-Or you can read `stdin` by using a pipe:
+**You can specify a language:**
+
+```bash
+define impavide en français
+```
+
+**Or you can read `stdin` by using a pipe:**
 
 ```bash
 echo "unwavering" | define
