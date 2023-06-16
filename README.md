@@ -61,9 +61,13 @@ Instructions on how to use each of the scripts and tools are included in the ind
 
 ![shellgenius](https://github.com/sderev/llm-toolbox/assets/24412384/894497c4-556e-4ad8-bedd-202ac6b1c308)
 
+___
+
 ### Vocabmaster
 
 Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), a CLI tool designed to help you record vocabulary, access translations and examples, and seamlessly import them into Anki for an optimized language learning experience. Check out the project on [its dedicated repository](https://github.com/sderev/vocabmaster).
+
+___
 
 ### Thesaurus
 
@@ -71,18 +75,23 @@ The [`thesaurus`](https://github.com/sderev/llm-toolbox/tree/main/tools/thesauru
 
 ![thesaurus](https://github.com/sderev/llm-toolbox/assets/24412384/c680f381-f35b-4daa-9a89-e5045047c134)
 
+___
+
 ### Define
 
 The [`define`](https://github.com/sderev/llm-toolbox/tree/main/tools/define) script takes a word as input and provides its definition along with an example sentence using the word.
 
 ![define](https://github.com/sderev/llm-toolbox/assets/24412384/0bb958b6-a354-45d8-bf05-73149fa729d3)
 
+___
 
 ### Proofread
 
 The [`proofread`](https://github.com/sderev/llm-toolbox/tree/main/tools/proofread) script takes a sentence as input and provides a corrected version of it, if needed, along with an explanation of the corrections.
 
 ![proofread_english](https://github.com/sderev/llm-toolbox/assets/24412384/4f564d03-4392-4efa-a2dd-f2a83482530c)
+
+___
 
 ### Translate
 
