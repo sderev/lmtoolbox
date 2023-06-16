@@ -74,10 +74,10 @@ That last example might pose a problem to `gpt-3.5-turbo`, but `gpt-4` will answ
 
 For more informations about the options like `-4`, you can run `llm --help` or read the documentation on [the GitHub repository of `llm`](https://github.com/simonw/llm).
 
-### Change the Language of the Response
+### Changing the Language of the Response
 
-`proofread` will always try to respond in the same language as the provided text, but it may fail and still display the corrections in English. Or maybe you want to ensure that it always responds in a specific language. 
+`proofread` will typically respond in the same language as the provided text. However, there may be occasions when it fails to do so, displaying the corrections in English instead. Alternatively, you might want to ensure that it always responds in a specific language.
 
-In that case, you can open the script and add in the prompt something like this: "Respond in French".
+In such case, you can modify the script and include a statement like this in the prompt: "Respond in French".
 
 ![proofread_french](https://github.com/sderev/llm-toolbox/assets/24412384/3bd02d3e-e8ce-4756-a3e1-b4a55475226c)
