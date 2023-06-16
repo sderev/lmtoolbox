@@ -59,6 +59,8 @@ Instructions on how to use each of the scripts and tools are included in the ind
 
 [ShellGenius](https://github.com/sderev/shellgenius) is an intuitive CLI tool designed to enhance your command-line experience by turning your task descriptions into efficient shell commands. Check out the project on [its dedicated repository](https://github.com/sderev/shellgenius).
 
+![shellgenius](https://github.com/sderev/llm-toolbox/assets/24412384/894497c4-556e-4ad8-bedd-202ac6b1c308)
+
 ### Vocabmaster
 
 Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), a CLI tool designed to help you record vocabulary, access translations and examples, and seamlessly import them into Anki for an optimized language learning experience. Check out the project on [its dedicated repository](https://github.com/sderev/vocabmaster).
@@ -67,17 +69,26 @@ Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), 
 
 The [`thesaurus`](https://github.com/sderev/llm-toolbox/tree/main/tools/thesaurus) script takes a word or a phrase as input and provides a list of synonyms and antonyms.
 
+![thesaurus](https://github.com/sderev/llm-toolbox/assets/24412384/c680f381-f35b-4daa-9a89-e5045047c134)
+
 ### Define
 
 The [`define`](https://github.com/sderev/llm-toolbox/tree/main/tools/define) script takes a word as input and provides its definition along with an example sentence using the word.
+
+![define](https://github.com/sderev/llm-toolbox/assets/24412384/0bb958b6-a354-45d8-bf05-73149fa729d3)
+
 
 ### Proofread
 
 The [`proofread`](https://github.com/sderev/llm-toolbox/tree/main/tools/proofread) script takes a sentence as input and provides a corrected version of it, if needed, along with an explanation of the corrections.
 
+![proofread_english](https://github.com/sderev/llm-toolbox/assets/24412384/4f564d03-4392-4efa-a2dd-f2a83482530c)
+
 ### Translate
 
 The [`translate`](https://github.com/sderev/llm-toolbox/tree/main/tools/translate) script takes a sentence and a target language as input and provides the translated sentence in the target language.
+
+![translate](https://github.com/sderev/llm-toolbox/assets/24412384/aac4d1c5-6711-4e59-915e-74cfeaf01ff3)
 
 ## Prompt Templates
 
