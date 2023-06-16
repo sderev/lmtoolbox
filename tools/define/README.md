@@ -54,7 +54,7 @@ You can choose a directory to store your scripts (for example, `C:\scripts`) and
 define a proclivity
 ```
 
-![define_1](https://github.com/sderev/llm-toolbox/assets/24412384/a5f0bb80-d611-4c82-8ff3-37da080dda68)
+![define_1](https://github.com/sderev/llm-toolbox/assets/24412384/ec7b43b3-8a4f-4286-8968-6ecf95f925ef)
 
 **You can specify a language:**
 
@@ -62,7 +62,7 @@ define a proclivity
 define impavide en français
 ```
 
-![define_3](https://github.com/sderev/llm-toolbox/assets/24412384/5c3f28d6-842d-40c5-942d-e40ede1e4d28)
+![define_3](https://github.com/sderev/llm-toolbox/assets/24412384/606b68c2-43c6-41db-96d7-e1e7828b8421)
 
 **Or you can read `stdin` by using a pipe:**
 
@@ -70,6 +70,6 @@ define impavide en français
 echo "unwavering" | define
 ```
 
-![define_2](https://github.com/sderev/llm-toolbox/assets/24412384/d8156563-3511-4fff-8856-c8a6ab58bbcb)
+![define_2](https://github.com/sderev/llm-toolbox/assets/24412384/315cbe8f-2065-4a71-9bb3-a683cb3336f3)
 
 The latter example is a bit contrived, but it works.
