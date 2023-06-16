@@ -54,7 +54,7 @@ You can choose a directory to store your scripts (for example, `C:\scripts`) and
 thesaurus good
 ```
 
-![thesaurus_1](https://github.com/sderev/llm-toolbox/assets/24412384/531b88a4-7382-4ab9-8ffc-b42a675f4012)
+![thesaurus_1](https://github.com/sderev/llm-toolbox/assets/24412384/ce5996e6-4401-440c-a3eb-cd8dfed7608a)
 
 **Or you can read `stdin` by using a pipe:**
 
@@ -62,6 +62,6 @@ thesaurus good
 echo "a thing" | thesaurus
 ```
 
-![thesaurus_2](https://github.com/sderev/llm-toolbox/assets/24412384/ac19635a-85db-4409-b7b1-6116d5f09148)
+![thesaurus_2](https://github.com/sderev/llm-toolbox/assets/24412384/5ed90014-0410-43dc-b691-e850f1cb0fb5)
 
 The latter example is a bit contrived, but it would work.
