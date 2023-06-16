@@ -16,6 +16,8 @@ The `proofread` script takes a text as input and provides a corrected version of
 
 * `llm` needs to be installed. You can find it [here](https://github.com/simonw/llm). Follow the instructions in its README for installation details.
 
+You can also check [the installation process I recommend](https://github.com/sderev/llm-toolbox#install-llm-with-pipx).
+
 ## Installation
 
 To make the script globally available in your terminal, follow these steps:

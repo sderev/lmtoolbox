@@ -14,7 +14,9 @@ The `define` script takes a word as input and provides its definition along with
 
 ## Prerequisites
 
-* `llm` needs to be installed. You can find it [here](https://github.com/simonw/llm). Follow the instructions in its README for installation details.
+* `llm` needs to be installed. You can find it [here](https://github.com/simonw/llm). Follow the instructions in its README for the official installation details and documentaton.
+
+You can also check [the installation process I recommend](https://github.com/sderev/llm-toolbox#install-llm-with-pipx).
 
 ## Installation
 
