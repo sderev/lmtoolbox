@@ -2,7 +2,7 @@
 
 VocabMaster is an CLI tool enhances language learning by recording vocabulary, providing translations and examples, and allowing seamless import into Anki for optimal language learning.
 
-![vocabmaster_translate_japanese](https://github.com/sderev/llm-toolbox/assets/24412384/2884b86f-82df-4d3e-b839-d588356a4abe)
+![vocabmaster_translate_japanese](https://github.com/sderev/llm-toolbox/assets/24412384/7bbc6169-1a63-40ec-a057-43eacbb7bd98)
 
 <!-- TOC -->
 ## Table of Contents
