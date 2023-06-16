@@ -12,7 +12,7 @@ Additionally, the toolbox provides a selection of prompt templates to help you g
     1. [Cloning the LLM-Toolbox Repository](#cloning-the-llm-toolbox-repository)
 1. [Tools](#tools)
     1. [ShellGenius](#shellgenius)
-    1. [Vocabmaster](#vocabmaster)
+    1. [VocabMaster](#vocabmaster)
     1. [Thesaurus](#thesaurus)
     1. [Define](#define)
     1. [Proofread](#proofread)
@@ -63,7 +63,7 @@ Instructions on how to use each of the scripts and tools are included in the ind
 
 ___
 
-### Vocabmaster
+### VocabMaster
 
 Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), a CLI tool designed to help you record vocabulary, access translations and examples, and seamlessly import them into Anki for an optimized language learning experience. Check out the project on [its dedicated repository](https://github.com/sderev/vocabmaster).
 
