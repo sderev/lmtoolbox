@@ -67,6 +67,8 @@ ___
 
 Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), a CLI tool designed to help you record vocabulary, access translations and examples, and seamlessly import them into Anki for an optimized language learning experience. Check out the project on [its dedicated repository](https://github.com/sderev/vocabmaster).
 
+![vocabmaster_translate](https://github.com/sderev/llm-toolbox/assets/24412384/213a3a62-3e58-4249-9495-96a659096623)
+
 ___
 
 ### Thesaurus
