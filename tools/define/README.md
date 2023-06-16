@@ -10,7 +10,6 @@ The `define` script takes a word as input and provides its definition along with
     1. [Linux/macOS](#linuxmacos)
     1. [Windows](#windows)
 1. [Usage](#usage)
-1. [Example](#example)
 <!-- /TOC -->
 
 ## Prerequisites
