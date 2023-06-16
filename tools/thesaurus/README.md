@@ -10,7 +10,6 @@ The `thesaurus script takes a word or a phrase as input and provides a list of s
     1. [Linux/macOS](#linuxmacos)
     1. [Windows](#windows)
 1. [Usage](#usage)
-1. [Example](#example)
 <!-- /TOC -->
 
 ## Prerequisites
@@ -47,17 +46,20 @@ You can choose a directory to store your scripts (for example, `C:\scripts`) and
 
 ## Usage
 
-You can pass arguments as the following:
+**You can pass arguments as the following:**
 
 ```bash
 thesaurus good
 ```
 
-Or you can read `stdin` by using a pipe:
+![thesaurus_1](https://github.com/sderev/llm-toolbox/assets/24412384/531b88a4-7382-4ab9-8ffc-b42a675f4012)
+
+**Or you can read `stdin` by using a pipe:**
 
 ```bash
 echo "a thing" | thesaurus
 ```
 
-The latter example is a bit contrived, but it would work.
+![thesaurus_2](https://github.com/sderev/llm-toolbox/assets/24412384/ac19635a-85db-4409-b7b1-6116d5f09148)
 
+The latter example is a bit contrived, but it would work.
