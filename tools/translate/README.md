@@ -10,7 +10,6 @@ The translate script takes a sentence and a target language as input and provide
     1. [Linux/macOS](#linuxmacos)
     1. [Windows](#windows)
 1. [Usage](#usage)
-1. [Example](#example)
 <!-- /TOC -->
 
 ## Prerequisites
@@ -50,14 +49,18 @@ You can choose a directory to store your scripts (for example, `C:\scripts`) and
 **You can pass arguments and specify a target language:**
 
 ```
-translate an umbrella in German
+translate marvelous in Japanese
 ```
+
+![translate_japanese](https://github.com/sderev/llm-toolbox/assets/24412384/42e98531-b881-4938-9793-e31100c62954)
 
 **But this is not required:**
 
 ```
-translate to relish
+translate to enrapture
 ```
+
+![translate](https://github.com/sderev/llm-toolbox/assets/24412384/0ef3a0fb-06b0-4c4a-822c-0ab67309e5c6)
 
 In that case, the default pair of languages will be used.
 
@@ -67,6 +70,8 @@ In that case, the default pair of languages will be used.
 cat my_file.txt | translate
 ```
 
+![translate_file_english](https://github.com/sderev/llm-toolbox/assets/24412384/c15fa8eb-efca-44c9-b6e4-b91b03a7db32)
+
 You won't be able to define a language with the latter example, though.
 
 ### Default Pair of Languages
@@ -74,4 +79,3 @@ You won't be able to define a language with the latter example, though.
 The current prompt is set to French and English.
 
 You can change this behavior by editing the prompt in the script with your desired pair of languages.
-
