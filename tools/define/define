@@ -1,0 +1,17 @@
+#! /usr/bin/bash
+
+# Check if any arguments were passed to the script
+if [[ -n "$@" ]]; then
+    # Combine all arguments into a single string
+    input="$*"
+else
+    # Read input from stdin
+    while IFS= read -r line
+do
+   input+="$line\n"
+done
+fi  
+
+# Call the `llm` command with the modified input
+llm --system "You are a multilingual dictionary. Define the given word and create an example sentence using it, ensuring that both are in the language the word is most commonly used. If the language isn't clear, use English." "$input"
+
