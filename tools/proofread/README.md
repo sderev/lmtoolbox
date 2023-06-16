@@ -10,7 +10,6 @@ The `proofread` script takes a text as input and provides a corrected version of
     1. [Linux/macOS](#linuxmacos)
     1. [Windows](#windows)
 1. [Usage](#usage)
-1. [Example](#example)
 <!-- /TOC -->
 
 ## Prerequisites
