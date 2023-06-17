@@ -25,7 +25,7 @@ Additionally, the toolbox provides a selection of prompt templates to help you g
 
 To use these scripts, you need to clone this repository and ensure you have installed all necessary dependencies.
 
-For some of the scripts, you'll need to install `llm`. You can find [its repository here](https://github.com/simonw/llm). Follow the instructions in its README for the official installation details and documentation.
+For some of the scripts, you'll need to install `llm`. You can find [its repository here](https://github.com/simonw/llm). Follow the instructions in its [README](https://github.com/simonw/llm) for the official installation details and documentation.
 
 ### Install `llm` with `pipx`
 
