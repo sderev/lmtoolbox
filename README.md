@@ -1,6 +1,6 @@
 # LLM-Toolbox
 
-LLM-Toolbox is a collection of command line tools that harness the power of large language models to perform various tasks. This repository houses scripts and tools that utilize OpenAI's ChatGPT for tasks such as dictionary and thesaurus queries, text translation, proofreading, enriching language learning, automating shell commands, and more.
+LLM-Toolbox is a collection of command-line tools that harness the power of large language models to perform various tasks. This repository houses scripts and tools that utilize OpenAI's ChatGPT for tasks such as automatic commit messages, dictionary and thesaurus queries, text translation, proofreading, enriching language learning, automating shell commands, and more.
 
 Additionally, the toolbox provides a selection of [prompt templates](#prompt-templates) to help you get the most out of your interactions with the language models. Whether you're new to scripting with language models or an experienced developer, these templates can serve as an invaluable resource.
 
@@ -79,9 +79,7 @@ At the time of writing (2023-06-17T13:35:56+02:00), these are the costs:
 
 ### pip
 
-Ensure you have Python 3.8 or more.
-
-To install LLM-Toolbox, you can use the following command:
+Install LLM-Toolbox using `pip`:
 
 ```bash
 python3 -m pip install llm-toolbox
