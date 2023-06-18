@@ -15,6 +15,7 @@ Given the wide-ranging capabilities of the LLM-Toolbox, it can be helpful to see
     1. [Is GPT-3.5 Sufficient for Those Tools?](#is-gpt-35-sufficient-for-those-tools)
     1. [Current Costs](#current-costs)
 1. [Installation](#installation)
+    1. [pip](#pip)
     1. [`pipx`, the Easy Way](#pipx-the-easy-way)
     1. [Installing the LLM-Toolbox](#installing-the-llm-toolbox)
     1. [Cloning the LLM-Toolbox Repository](#cloning-the-llm-toolbox-repository)

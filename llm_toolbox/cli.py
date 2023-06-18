@@ -5,7 +5,6 @@ from pathlib import Path
 import subprocess
 import pty
 import sys
-from urllib.parse import urlparse
 import tempfile
 import re
 
@@ -114,7 +113,7 @@ def commitgen(ctx, model, file, emoji):
     try:
         subprocess.check_output(["git", "rev-parse", "--is-inside-work-tree"])
     except subprocess.CalledProcessError as error:
-        #click.echo(f"Error occurred: {error}", err=True)
+        # click.echo(f"Error occurred: {error}", err=True)
         return
 
     # Check if there are staged changes
@@ -144,7 +143,11 @@ def commitgen(ctx, model, file, emoji):
     click.echo(commit_message)
     click.echo("\n---\n")
 
-    choice = click.prompt("Do you want to use this commit message? (yes/edit/no)", type=str, default="edit")
+    choice = click.prompt(
+        "Do you want to use this commit message? (yes/edit/no)",
+        type=str,
+        default="edit",
+    )
 
     choice = choice.lower()
     if choice in ["y", "yes", ""]:

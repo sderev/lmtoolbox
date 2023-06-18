@@ -7,10 +7,7 @@ It is part of the [LLM-Toolbox](https://github.com/sderev/llm-toolbox).
 <!-- TOC -->
 ## Table of Contents
 
-1. [Prerequisites](#prerequisites)
 1. [Installation](#installation)
-    1. [Linux/macOS](#linuxmacos)
-    1. [Windows](#windows)
 1. [Usage](#usage)
 <!-- /TOC -->
 
@@ -30,12 +27,6 @@ You can install it with `pip` or `pipx` depending on your preferences:
     ```bash
     pipx install llm-toolbox
     ```
-
-### Configure your API key using `llm`
-
-```bash
-llm keys
-```
 
 ## Usage
 
