@@ -137,7 +137,27 @@ def commitgen(ctx, model, file, emoji):
     command = ["llm", "--template", "commitgen", prompt.encode("utf-8")]
     if model:
         command.extend(["--model", str(model)])
-    commit_message = subprocess.check_output(command).decode()
+
+    click.echo("Generating commit message...\n---\n\n")
+
+    commit_message = execute(command)
+    click.echo(commit_message)
+    click.echo("\n---\n")
+
+    choice = click.prompt("Do you want to use this commit message? (yes/edit/no)", type=str, default="edit")
+
+    choice = choice.lower()
+    if choice in ["y", "yes", ""]:
+        choice = "yes"
+    elif choice in ["e", "edit"]:
+        choice = "edit"
+    elif choice in ["n", "no"]:
+        choice = "no"
+        click.echo(click.style("Aborting commit.", fg="blue"))
+        return
+    else:
+        click.echo("Invalid option. Aborting commit.")
+        return
 
     # Write commit message to a temp file
     with tempfile.NamedTemporaryFile(
@@ -148,7 +168,10 @@ def commitgen(ctx, model, file, emoji):
 
     # Open git commit with temp file as template
     try:
-        subprocess.run(["git", "commit", "-t", temp_path])
+        if choice == "yes":
+            subprocess.run(["git", "commit", "-F", temp_path])
+        elif choice == "edit":
+            subprocess.run(["git", "commit", "-e", "-t", temp_path])
     finally:
         os.remove(temp_path)
 
@@ -313,6 +336,8 @@ def execute(command):
     """
     Execute a subprocess and print the output in real-time.
     """
+    output_str = ""
+
     try:
         # Open a pseudo-terminal to interact with the subprocess
         master, slave = pty.openpty()
@@ -332,7 +357,8 @@ def execute(command):
                     decoded_output = output.decode("utf-8", errors="replace")
                     click.echo(f"Error decoding output: {error}", err=True)
 
-                print(output.decode(), end="")
+                print(decoded_output, end="")
+                output_str += decoded_output
                 sys.stdout.flush()
             except OSError:
                 break  # Probably the process has ended
@@ -348,6 +374,8 @@ def execute(command):
             f"Error occurred while executing command:\n{str(error)}",
             err=True,
         )
+
+    return output_str
 
 
 def is_valid_url(url):
