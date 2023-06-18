@@ -21,7 +21,6 @@ jeepney==0.8.0
 Jinja2==3.1.2
 keyring==23.13.1
 llm==0.4.1
--e git+ssh://git@github.com/sderev/llm-toolbox.git@50ea089abb0e6deb663fbfdf845d8807e4a925aa#egg=LLM_Toolbox
 markdown-it-py==3.0.0
 MarkupSafe==2.1.3
 mdurl==0.1.2

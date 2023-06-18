@@ -1,6 +1,8 @@
 # `define`
 
-The `define` script takes a word as input and provides its definition along with an example sentence using the word.
+The `define` tool takes a word as input and provides its definition along with an example sentence using the word.
+
+It is part of the [LLM-Toolbox](https://github.com/sderev/llm-toolbox).
 
 <!-- TOC -->
 ## Table of Contents
@@ -9,43 +11,19 @@ The `define` script takes a word as input and provides its definition along with
 1. [Usage](#usage)
 <!-- /TOC -->
 
-## Prerequisites
-
-* `llm` needs to be installed. You can find it [here](https://github.com/simonw/llm). Follow the instructions in its README for the official installation details and documentaton.
-
-You can also check [the installation process I recommend](https://github.com/sderev/llm-toolbox#install-llm-with-pipx).
-
 ## Installation
 
-To make the script globally available in your terminal, follow these steps:
+LLM-Toolbox needs to be installed. You can find [the detailed installation and configuration process on the main page of the repo](https://github.com/sderev/llm-toolbox).
 
-### Linux/macOS
+You can install it with `pip` or `pipx` depending on your preferences:
 
-1. Move the script to `~/.local/bin` or a dedicated folder of your choice.
-1. Open your shell configuration file (`.bashrc`, `.zshrc`, `.bash_profile`, or `.profile` depending on your system).
-1. If you chose another folder than `~/.local/bin`, which should already be on your PATH, add the following line to your shell configuration file: `export PATH=$PATH:~/path/to/folder/of/your/choice` (match the directory you used in step 1).
-1. Save the file and source your shell configuration file, or start a new shell session.
+* `pip`
 
     ```bash
-    source ~/path/to/folder
+    python3 -m pip install llm-toolbox
     ```
+* `pipx`
 
-<<<<<<< HEAD
-### Windows
-
-For Windows users, if you use WSL, you're already covered with the previous instructions. If not, you'll need a Bash-like environment to run these scripts, such as Git Bash or Cygwin. 
-
-You can choose a directory to store your scripts (for example, `C:\scripts`) and add this directory to your PATH:
-
-1. Right-click on 'Computer' and choose 'Properties'.
-1. Click on 'Advanced system settings'.
-1. Click on 'Environment Variables'.
-1. Under 'System Variables' find the PATH variable, select it, and click 'Edit'.
-1. In the 'Variable value' field, add the path of the directory where you placed your scripts at the end, preceded by a semicolon (`;`). For example: `;C:\scripts`.
-1. Click 'OK', 'OK', 'OK'. You may need to restart your session or even your computer for the changes to take effect (Windows magic 🪄).
-
-=======
->>>>>>> e8ee2e4 (version 0.0.1)
 ## Usage
 
 **You can pass arguments as the following:**

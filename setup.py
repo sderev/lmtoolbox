@@ -4,7 +4,7 @@ from setuptools.command.install import install
 from pathlib import Path
 import shutil
 
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 
 class PostDevelopCommand(develop):
@@ -12,10 +12,9 @@ class PostDevelopCommand(develop):
 
     def run(self):
         develop.run(self)
-        self.execute(self.copy_files, ())
+        self.execute(self.copy_files, (), {})
 
-    @staticmethod
-    def copy_files():
+    def copy_files(self):
         dest_path = Path.home() / ".config/io.datasette.llm/templates"
         dest_path.mkdir(parents=True, exist_ok=True)
 
@@ -29,7 +28,7 @@ class PostInstallCommand(install):
 
     def run(self):
         install.run(self)
-        self.execute(self.copy_files, ())
+        self.execute(self.copy_files, (), {})
 
     copy_files = PostDevelopCommand.copy_files
 
@@ -57,7 +56,7 @@ setup(
         "Changelog": "https://github.com/sderev/llm-toolbox/releases",
     },
     license="Apache Licence, Version 2.0",
-    version="0.0.1",
+    version=VERSION,
     packages=find_packages(),
     package_data={
         "llm_toolbox": ["tools/templates/*.yaml"],
