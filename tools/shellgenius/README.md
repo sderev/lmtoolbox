@@ -2,6 +2,8 @@
 
 ShellGenius is an intuitive CLI tool designed to enhance your command-line experience by turning your task descriptions into efficient shell commands. It generates accurate commands based on your input and provides step-by-step explanations to help you understand the underlying logic.
 
+ShellGenius shines even more when you create a very short and practical alias for it. I recommend using `??` as its alias. You can find detailed instructions on [its dedicated repository](https://github.com/sderev/shellgenius)
+
 ![shellgenius_3](https://github.com/sderev/llm-toolbox/assets/24412384/9c62d540-1a56-41d6-8800-d3b094a40dfb)
 
 <!-- TOC -->
