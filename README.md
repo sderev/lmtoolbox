@@ -131,13 +131,39 @@ git clone https://github.com/sderev/llm-toolbox.git
 
 ## Getting Started
 
-Except for some tools, LLM-Toolbox uses [simonw/llm](https://github.com/simonw/llm) for its interface. You don't have to separately install it, but I wanted to mention it, as it's an important tool in itself, which you'll also when you install LLM-Toolbox. In addition to this repo, consider checking out [simonw/llm's documentation](https://github.com/simonw/llm)'s.
-
-`llm` is packaged in LLM-Toolbox, so you will be able to use it as a standalone as well.
-
 ### Set your OpenAI API key
 
-**TODO**
+LLM-Toolbox requires an OpenAI API key to function. You can obtain a key by signing up for an account at [OpenAI's website](https://platform.openai.com/account/api-keys).
+
+You need to set some usage limit before to be able to use the API. You can configure on your OpenAI account in *Billing -> Usage limits*.
+
+Once you have your API key, set it as an environment variable:
+
+* On macOS and Linux:
+
+  ```bash
+  export OPENAI_API_KEY="your-api-key-here"
+  ```
+
+  To avoid having to type it everyday, you can create a file with the key:
+
+  ```bash
+  echo "your-api-key" > ~/.openai-api-key.txt
+  ```
+
+  **Note:** Remember to replace `"your-api-key"` with your actual API key.
+
+  And then, you can add this to your shell configuration file (`.bashrc`, `.zshrc`, etc.):
+
+    ```bash
+    export OPENAI_API_KEY="$(cat ~/.openai-api-key.txt)"
+    ```
+
+* On Windows:
+
+  ```
+  setx OPENAI_API_KEY your_key
+  ```
 
 ## Tools
 

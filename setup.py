@@ -1,7 +1,34 @@
 from setuptools import setup, find_packages
+from setuptools.command.develop import develop
+from setuptools.command.install import install
 from pathlib import Path
+import shutil
 
 VERSION = "0.0.1"
+
+class PostDevelopCommand(develop):
+    """Post-installation for development mode."""
+    def run(self):
+        develop.run(self)
+        self.execute(self.copy_files, ())
+
+    @staticmethod
+    def copy_files():
+        dest_path = Path.home() / ".config/io.datasette.llm/templates"
+        dest_path.mkdir(parents=True, exist_ok=True)
+
+        src_path = Path(__file__).parent / "llm_toolbox/tools/templates"
+        for file in src_path.glob('*.yaml'):
+            shutil.copy2(file, dest_path)
+
+
+class PostInstallCommand(install):
+    """Post-installation for installation mode."""
+    def run(self):
+        install.run(self)
+        self.execute(self.copy_files, ())
+
+    copy_files = PostDevelopCommand.copy_files
 
 
 def read_requirements():
@@ -29,6 +56,8 @@ setup(
     license="Apache Licence, Version 2.0",
     version="0.0.1",
     packages=find_packages(),
+    package_data={"llm_toolbox": ["tools/templates/*.yaml"],},
+    cmdclass={'develop': PostDevelopCommand, 'install': PostInstallCommand},
     install_requires=read_requirements(),
     entry_points={
         "console_scripts": [
