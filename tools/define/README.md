@@ -5,10 +5,7 @@ The `define` script takes a word as input and provides its definition along with
 <!-- TOC -->
 ## Table of Contents
 
-1. [Prerequisites](#prerequisites)
 1. [Installation](#installation)
-    1. [Linux/macOS](#linuxmacos)
-    1. [Windows](#windows)
 1. [Usage](#usage)
 <!-- /TOC -->
 
@@ -33,6 +30,7 @@ To make the script globally available in your terminal, follow these steps:
     source ~/path/to/folder
     ```
 
+<<<<<<< HEAD
 ### Windows
 
 For Windows users, if you use WSL, you're already covered with the previous instructions. If not, you'll need a Bash-like environment to run these scripts, such as Git Bash or Cygwin. 
@@ -46,6 +44,8 @@ You can choose a directory to store your scripts (for example, `C:\scripts`) and
 1. In the 'Variable value' field, add the path of the directory where you placed your scripts at the end, preceded by a semicolon (`;`). For example: `;C:\scripts`.
 1. Click 'OK', 'OK', 'OK'. You may need to restart your session or even your computer for the changes to take effect (Windows magic 🪄).
 
+=======
+>>>>>>> e8ee2e4 (version 0.0.1)
 ## Usage
 
 **You can pass arguments as the following:**
