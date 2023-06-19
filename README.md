@@ -6,7 +6,7 @@
 
 LLM-Toolbox is a collection of command-line tools that harness the power of large language models to perform various tasks. This repository houses tools that utilize OpenAI's ChatGPT for tasks such as automatic commit messages, dictionary and thesaurus queries, text translation, proofreading, enriching language learning, automating shell commands, and more.
 
-Additionally, the toolbox provides a selection of [prompt templates](#prompt-templates) to help you get the most out of your interactions with the language models. Whether you're new to using language models and CLI or an experienced developer, these tools and templates can serve as an invaluable resource.
+Additionally, the toolbox provides an array of [prompt templates](#prompt-templates) to help you get the most out of your interactions with the language models. Whether you're new to using language models and CLI or an experienced developer, these tools and templates can serve as an invaluable resource.
 
 Given the wide-ranging capabilities of the LLM-Toolbox, it can be helpful to see it in action first. Therefore, I strongly suggest you check out the video demos of the tools to gain a hands-on understanding of their potential. After viewing the demos, you can return here for a deeper dive into the specific applications and benefits. So, go ahead, watch the demos! 😊
 
