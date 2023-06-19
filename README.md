@@ -1,6 +1,6 @@
 # LLM-Toolbox
 
-**Development Notice**: Please note that the LLM-Toolbox is currently in active development. This means you can expect frequent updates, changes, and additions as I continue to refine and expand the toolset. I encourage you to stay updated with the latest features and fixes. Your feedback is also invaluable for this development process, so please don't hesitate to share your thoughts and experiences. If you find this project useful, please consider giving it a star to show your support ⭐😊.
+**Development Status**: Please note that the LLM-Toolbox is currently in active development. This means you can expect frequent updates, changes, and additions as I continue to refine and expand the toolset. I encourage you to stay updated with the latest features and fixes. Your feedback is also invaluable for this development process, so please don't hesitate to share your thoughts and experiences. If you find this project useful, please consider giving it a star to show your support ⭐😊.
 
 ---
 
