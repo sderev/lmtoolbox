@@ -45,7 +45,7 @@ It's better to use the web interface if you plan on having very long chat intera
 
 ## Isn't the OpenAI API expensive?
 
-A lot of people are afraid that these tools will cost them too much. But the truth is, as long as you're not sending too many requests to GPT-4, you won't have exorbitant bills. On the contrary, this may surprise you, but I'm pretty confident that the majority of people won't exceed a cost of $3 per month, as long as they continue to use GPT-3.5, even if they use these tools more than a hundred times a day.
+A lot of people are afraid that these tools will cost them too much. But the truth is, as long as you're not sending too many requests to GPT-4, you won't have exorbitant bills. On the contrary, this may surprise you, but I'm pretty confident that the majority of people won't exceed a cost of $3 to $5 per month, as long as they continue to use GPT-3.5, even if they use these tools more than a hundred times a day.
 
 Also, there's a safeguard: **you can configure a soft and a hard usage limit on your OpenAI account**. This ensures that you won't ever be taken by surprise.
 
@@ -56,15 +56,17 @@ Also, there's a safeguard: **you can configure a soft and a hard usage limit on 
 
 Well... in giving your money to OpenAI, actually.
 
-Even if you have a monthly expense of more than a dollar, it's well worth looking at looking at the huge benefits you'll receive from utilizing the tools in the LLM-Toolbox. These innovative solutions provide users with powerful capabilities that can **significantly streamline tasks, improve productivity, and foster creativity**.
+Even if you have a monthly expense of more than a dollar, it's well worth looking at the huge benefits you'll receive from utilizing the tools in the LLM-Toolbox. These innovative solutions provide users with powerful capabilities that can **significantly streamline tasks, improve productivity, and foster creativity**.
 
-Particularly, let's consider [ShellGenius](#shellgenius), a remarkable tool within the LLM-Toolbox. It enhances the command-line experience by translating task descriptions into efficient shell commands, a feat that not only saves time but also reduces the possibility of human error. This tool is extremely beneficial for both beginners, who may not be fluent in shell commands, and experienced users who can streamline their command-line tasks by simply describing what they wish to accomplish, and [ShellGenius](#shellgenius) provides the correct shell command to achieve it.
+Particularly, let's consider [ShellGenius](#shellgenius), a remarkable tool within the LLM-Toolbox. It enhances the command-line experience by translating task descriptions into efficient shell commands, a feat that not only saves time but also reduces the possibility of human error. This tool is extremely beneficial for both beginners, who may not be fluent in shell commands, and experienced users who can streamline their command-line tasks by simply describing what they wish to accomplish.
 
 Therefore, when considering the cost, it's essential to look beyond the immediate dollar value and evaluate the considerable time, effort, and resources you stand to save. The utility and value derived from such tools often outweigh the minimal monthly cost. The price of these tools should not be a deterrent but rather seen as an investment in enhancing your efficiency and productivity.
 
+Also, try to ask for an API key at your workplace.
+
 ### Is GPT-3.5 Sufficient for Those Tools?
 
-GPT-3.5 is an excellent model for these tools, offering cost-effective solution that consistently delivers appropriate responses. I take great care in crafting my prompts and the tools to generate the best results that cater to my daily needs.
+GPT-3.5 is an excellent model for these tools, offering a cost-effective solution that consistently delivers appropriate responses. I take great care in crafting my prompts and the tools to generate the best results that cater to my own daily needs.
 
 I will continue refining them, if necessary, as time goes on. So stay tuned to this repo and consider giving it a star ⭐!
 
@@ -183,8 +185,9 @@ Here's a brief overview:
 
 ### Commitgen
 
-The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) is designed to streamline your `git` workflow by automatically generating meaningful commit messages for your code changes.
+The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) tool is designed to streamline your `git` workflow by automatically generating meaningful commit messages for your code changes.
 
+![demo_0](https://github.com/sderev/llm-toolbox/assets/24412384/d41985d5-d8a2-4622-9ef7-643176cdc741)
 ___
 
 ### VocabMaster
