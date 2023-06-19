@@ -4,9 +4,9 @@
 
 ---
 
-LLM-Toolbox is a collection of command-line tools that harness the power of large language models to perform various tasks. This repository houses scripts and tools that utilize OpenAI's ChatGPT for tasks such as automatic commit messages, dictionary and thesaurus queries, text translation, proofreading, enriching language learning, automating shell commands, and more.
+LLM-Toolbox is a collection of command-line tools that harness the power of large language models to perform various tasks. This repository houses tools that utilize OpenAI's ChatGPT for tasks such as automatic commit messages, dictionary and thesaurus queries, text translation, proofreading, enriching language learning, automating shell commands, and more.
 
-Additionally, the toolbox provides a selection of [prompt templates](#prompt-templates) to help you get the most out of your interactions with the language models. Whether you're new to scripting with language models or an experienced developer, these templates can serve as an invaluable resource.
+Additionally, the toolbox provides a selection of [prompt templates](#prompt-templates) to help you get the most out of your interactions with the language models. Whether you're new to using language models and CLI or an experienced developer, these tools and templates can serve as an invaluable resource.
 
 Given the wide-ranging capabilities of the LLM-Toolbox, it can be helpful to see it in action first. Therefore, I strongly suggest you check out the video demos of the tools to gain a hands-on understanding of their potential. After viewing the demos, you can return here for a deeper dive into the specific applications and benefits. So, go ahead, watch the demos! 😊
 
@@ -27,6 +27,7 @@ Given the wide-ranging capabilities of the LLM-Toolbox, it can be helpful to see
     1. [Set your OpenAI API key](#set-your-openai-api-key)
 1. [Tools](#tools)
     1. [ShellGenius](#shellgenius)
+    1. [Commitgen](#commitgen)
     1. [VocabMaster](#vocabmaster)
     1. [Thesaurus](#thesaurus)
     1. [Define](#define)
@@ -180,6 +181,10 @@ Here's a brief overview:
 
 ![shellgenius](https://github.com/sderev/llm-toolbox/assets/24412384/688d9a1a-f351-42d0-9f4d-06a9a6d1909a)
 
+### Commitgen
+
+The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) is designed to streamline your `git` workflow by automatically generating meaningful commit messages for your code changes.
+
 ___
 
 ### VocabMaster
@@ -192,7 +197,7 @@ ___
 
 ### Thesaurus
 
-The [`thesaurus`](https://github.com/sderev/llm-toolbox/tree/main/tools/thesaurus) script takes a word or a phrase as input and provides a list of synonyms and antonyms.
+The [`thesaurus`](https://github.com/sderev/llm-toolbox/tree/main/tools/thesaurus) tool takes a word or a phrase as input and provides a list of synonyms and antonyms.
 
 ![thesaurus](https://github.com/sderev/llm-toolbox/assets/24412384/dca6bf42-2545-4b56-bb20-4c8e6c872529)
 
@@ -200,7 +205,7 @@ ___
 
 ### Define
 
-The [`define`](https://github.com/sderev/llm-toolbox/tree/main/tools/define) script takes a word as input and provides its definition along with an example sentence using the word.
+The [`define`](https://github.com/sderev/llm-toolbox/tree/main/tools/define) tool takes a word as input and provides its definition along with an example sentence using the word.
 
 ![define](https://github.com/sderev/llm-toolbox/assets/24412384/1e813b80-6896-483b-b31a-65ad7cb81173)
 
@@ -208,7 +213,7 @@ ___
 
 ### Proofread
 
-The [`proofread`](https://github.com/sderev/llm-toolbox/tree/main/tools/proofread) script takes a sentence as input and provides a corrected version of it, if needed, along with an explanation of the corrections.
+The [`proofread`](https://github.com/sderev/llm-toolbox/tree/main/tools/proofread) tool takes a sentence as input and provides a corrected version of it, if needed, along with an explanation of the corrections.
 
 ![proofread_english](https://github.com/sderev/llm-toolbox/assets/24412384/e84ce7cd-68e9-4d6d-8c56-55b93c7e4fee)
 
@@ -216,7 +221,7 @@ ___
 
 ### Translate
 
-The [`translate`](https://github.com/sderev/llm-toolbox/tree/main/tools/translate) script takes a sentence and a target language as input and provides the translated sentence in the target language.
+The [`translate`](https://github.com/sderev/llm-toolbox/tree/main/tools/translate) tool takes a sentence and a target language as input and provides the translated sentence in the target language.
 
 ![translate](https://github.com/sderev/llm-toolbox/assets/24412384/505237c9-7735-4db6-aa4a-63c3ed2867a7)
 
