@@ -16,7 +16,23 @@ ShellGenius shines even more when you create a very short and practical alias fo
 
 ## Installation
 
-ShellGenius has its own installation process. For installation details and the guide to get started, please visit its dedicated repository at [https://github.com/sderev/shellgenius](https://github.com/sderev/shellgenius).
+ShellGenius can be installed as a standalone, if you prefer not to install the whole LLM-Toolbox.
+
+For installation details and the guide to get started, please visit its dedicated repository at [https://github.com/sderev/shellgenius](https://github.com/sderev/shellgenius).
+
+Otherwise, it is packaged in the LLM-Toolbox which you can install with `pip` or `pipx` depending on your preferences:
+
+* `pip`
+
+  ```bash
+  python3 -m pip install llm-toolbox
+  ```
+
+* `pipx`
+
+  ```bash
+  pipx install llm-toolbox
+  ```
 
 ## Usage
 

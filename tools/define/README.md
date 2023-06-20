@@ -22,7 +22,12 @@ You can install it with `pip` or `pipx` depending on your preferences:
     ```bash
     python3 -m pip install llm-toolbox
     ```
+
 * `pipx`
+
+    ```bash
+    pipx install llm-toolbox
+    ```
 
 ## Usage
 

@@ -20,7 +20,8 @@ You can install it with `pip` or `pipx` depending on your preferences:
 
 * `pip`
 
-    ```bash                                                                python3 -m pip install llm-toolbox
+    ```bash
+    python3 -m pip install llm-toolbox
     ```
 * `pipx`
 

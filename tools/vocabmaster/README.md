@@ -14,7 +14,23 @@ VocabMaster is an CLI tool enhances language learning by recording vocabulary, p
 
 ## Installation
 
-VocabMaster has its own installation process. For installation details and the guide to get started, please visit its dedicated repository at [https://github.com/sderev/vocabmaster](https://github.com/sderev/vocabmaster).
+VocabMaster can be installed as a standalone, if you prefer not to install the whole LLM-Toolbox.
+
+For installation details and the guide to get started, please visit its dedicated repository at [https://github.com/sderev/vocabmaster](https://github.com/sderev/vocabmaster).
+
+Otherwise, it is packaged in the LLM-Toolbox which you can install with `pip` or `pipx` depending on your preferences:
+
+* `pip`
+
+  ```bash
+  python3 -m pip install llm-toolbox
+  ```
+
+* `pipx`
+
+  ```bash
+  pipx install llm-toolbox
+  ```
 
 ## Usage
 

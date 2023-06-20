@@ -2,15 +2,15 @@
 
 **Development Status**: 
 
-LLM-Toolbox, currently undergoing active development, is a valuable ensemble of command-line tools. Drawing from the capabilities of large language models, these tools accomplish a range of tasks—from automatic commit messages, dictionary and thesaurus inquiries, to text translation and proofreading, and even language learning enrichment and shell command automation. Your valuable feedback aids this ongoing journey of refinement, and I welcome your thoughts and experiences. If you find this project beneficial, consider expressing your support by giving it a star ⭐😊.
+LLM-Toolbox is currently under active development. Your feedback is crucial for this ongoing journey of refinement. Please share your thoughts, experiences, and suggestions. If you find this project beneficial, consider expression your support by giving it a star ⭐😊.
 
 ---
 
-LLM-Toolbox is an ensemble of command-line tools that harness the power of large language models to perform various tasks. This repository houses tools that utilize OpenAI's ChatGPT for tasks such as automatic commit messages, dictionary and thesaurus queries, text translation, proofreading, enriching language learning, automating shell commands, and more.
+LLM-Toolbox is an ensemble of AI-powered command-line tools designed to modernize your workflow in the terminal. Built using OpenAI's ChatGPT, the tools in this toolbox can generate automatic commit messages, perform dictionary and thesaurus quesries, translate text, proofread content, enrich language learning, and automate shell commands, among others.
 
-Additionally, the toolbox provides an array of [prompt templates](#prompt-templates) to help you get the most out of your interactions with the language models. Whether you're new to using language models and CLI or an experienced developer, these tools and templates can serve as an invaluable resource.
+Additionally, the toolbox provides an array of [prompt templates](#prompt-templates) that can serve as a valuable resource, whether you're new to using languages models or you're an experienced user.
 
-Given the wide-ranging capabilities of the LLM-Toolbox, it can be helpful to see it in action first. Therefore, I strongly suggest you check out the video demos of the tools to gain a hands-on understanding of their potential. After viewing the demos, you can return here for a deeper dive into the specific applications and benefits. So, go ahead, watch the demos! 😊
+I've created video demos to help you see the LLM-Toolbox in action and understand its wide-ranging capabilities. Therefore, I strongly recommend you check out the video demos of the tools to gain a hands-on understanding of their potential. After watching the demos, you can return here for a deeper dive into the specific applications and benefits. So, go ahead, watch the demos! 😊
 
 <!-- TOC -->
 ## Table of Contents
@@ -28,6 +28,7 @@ Given the wide-ranging capabilities of the LLM-Toolbox, it can be helpful to see
 1. [Getting Started](#getting-started)
     1. [Set your OpenAI API key](#set-your-openai-api-key)
 1. [Tools](#tools)
+    1. [`lmt`](#lmt)
     1. [ShellGenius](#shellgenius)
     1. [Commitgen](#commitgen)
     1. [VocabMaster](#vocabmaster)
@@ -64,8 +65,6 @@ Particularly, let's consider [ShellGenius](#shellgenius), a remarkable tool with
 
 Therefore, when considering the cost, it's essential to look beyond the immediate dollar value and evaluate the considerable time, effort, and resources you stand to save. The utility and value derived from such tools often outweigh the minimal monthly cost. The price of these tools should not be a deterrent but rather seen as an investment in enhancing your efficiency and productivity.
 
-Also, try to ask for an API key at your workplace.
-
 ### Is GPT-3.5 Sufficient for Those Tools?
 
 GPT-3.5 is an excellent model for these tools, offering a cost-effective solution that consistently delivers appropriate responses. I take great care in crafting my prompts and the tools to generate the best results that cater to my own daily needs.
@@ -95,7 +94,7 @@ python3 -m pip install llm-toolbox
 
 ### `pipx`, the Easy Way
 
-To use these tools, I recommend that you first install [pipx](https://pypa.github.io/pipx/installation/). It's a package manager for Python that makes the installation and upgrade of CLI apps easy (no more hassle with virtual environment 😌).
+To use these tools, I recommend that you first install [pipx](https://pypa.github.io/pipx/installation/). It's a package manager for Python that makes the installation and upgrade of CLI apps easy (no more hassle with virtual environments 😌).
 
 * Debian / Ubuntu
 
@@ -178,6 +177,10 @@ Once you have your API key, set it as an environment variable:
 Instructions on how to use each of the tools are included in the individual directories under [tools/](https://github.com/sderev/llm-toolbox/tree/main/tools). This is also where I give some tricks and tips on their usage 💡👀💭.
 
 Here's a brief overview:
+
+### `lmt`
+
+[`lmt`](https://github.com/sderev/lmt) empowers you to interact directly with ChatGPT from the comfort of your terminal. One of the core features of `lmt` is its ability to facilitate the creation of custom templates, enabling you to design your personalized toolbox of CLI applications. You can easily install its standalone version from [the project's repository](https://github.com/sderev/lmt).
 
 ### ShellGenius
 
