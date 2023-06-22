@@ -28,7 +28,7 @@ I've created video demos to help you see the LLM-Toolbox in action and understan
 1. [Getting Started](#getting-started)
     1. [Set your OpenAI API key](#set-your-openai-api-key)
 1. [Tools](#tools)
-    1. [`lmt`](#lmt)
+    1. [LMT](#lmt)
     1. [ShellGenius](#shellgenius)
     1. [Commitgen](#commitgen)
     1. [VocabMaster](#vocabmaster)
@@ -178,9 +178,9 @@ Instructions on how to use each of the tools are included in the individual dire
 
 Here's a brief overview:
 
-### `lmt`
+### LMT
 
-[`lmt`](https://github.com/sderev/lmt) empowers you to interact directly with ChatGPT from the comfort of your terminal. One of the core features of `lmt` is its ability to facilitate the creation of custom templates, enabling you to design your personalized toolbox of CLI applications. You can easily install its standalone version from [the project's repository](https://github.com/sderev/lmt).
+[LMT](https://github.com/sderev/lmt) empowers you to interact directly with ChatGPT from the comfort of your terminal. One of the core features of `lmt` is its ability to facilitate the creation of custom templates, enabling you to design your personalized toolbox of CLI applications. You can easily install its standalone version from [the project's repository](https://github.com/sderev/lmt).
 
 ### ShellGenius
 
