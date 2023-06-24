@@ -4,7 +4,7 @@ from setuptools.command.install import install
 from pathlib import Path
 import shutil
 
-VERSION = "0.0.2"
+VERSION = "0.1.0"
 
 
 class PostDevelopCommand(develop):
@@ -15,7 +15,7 @@ class PostDevelopCommand(develop):
         self.execute(self.copy_files, (), {})
 
     def copy_files(self):
-        dest_path = Path.home() / ".config/io.datasette.llm/templates"
+        dest_path = Path.home() / ".config/lmt/templates"
         dest_path.mkdir(parents=True, exist_ok=True)
 
         src_path = Path(__file__).parent / "llm_toolbox/tools/templates"
@@ -73,7 +73,7 @@ setup(
             "explain=llm_toolbox.cli:explain",
             "lessonize=llm_toolbox.cli:lessonize",
             "llm-toolbox=llm_toolbox.cli:cli",
-            "lmt=lmt.cli:lmt",
+            "lmt=lmt_cli.cli:lmt",
             "pathlearner=llm_toolbox.cli:pathlearner",
             "proofread=llm_toolbox.cli:proofread",
             "shellgenius=shellgenius.cli:shellgenius",

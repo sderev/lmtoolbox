@@ -5,4 +5,3 @@ system: >
   Maintain a profesionnal tone.
   It's crucial that the first line of your generated commit message must be a summary of the commit message and never exceed 50 characters. Follow with a detailed, but compact, explanation.
   Do not talk. Just write a detailed commit message following professional guidelines.
-

@@ -1,8 +1,10 @@
 click
 lmt-cli
 openai
+PyYAML
 rich
 shellgenius
 strip-tags
 tiktoken
+validators
 vocabmaster

@@ -31,20 +31,30 @@ I've created video demos to help you see the LLM-Toolbox in action and understan
     1. [LMT](#lmt)
     1. [ShellGenius](#shellgenius)
     1. [Commitgen](#commitgen)
+    1. [Codereview](#codereview)
     1. [VocabMaster](#vocabmaster)
     1. [Thesaurus](#thesaurus)
     1. [Define](#define)
     1. [Proofread](#proofread)
     1. [Translate](#translate)
-1. [Prompt Templates](#prompt-templates)
+    1. [Cheermeup](#cheermeup)
+    1. [Critique](#critique)
+    1. [Explain](#explain)
+    1. [Lessonize](#lessonize)
+    1. [Pathlearner](#pathlearner)
+    1. [Study](#study)
+    1. [Summarize](#summarize)
+    1. [Teachlib](#teachlib)
 1. [License](#license)
 <!-- /TOC -->
 
-## Prompt Templates
+## Prompt Templates 
 
-If you're not a terminal-centric person, or if you prefer the web interface anyway, note that I prepared [templates for ChatGPT web interface](https://github.com/sderev/llm-toolbox/prompt-templates).
+If you're less familiar with terminal interfaces, or if you simply prefer the convenience of a web interface, you'll find our [ChatGPT web interface templates](https://github.com/sderev/llm-toolbox/prompt-templates) quite helpful. Particularly for longer chat interactions with GPT-4, the web interface is advantageous, although it does necessitate a ChatGPT Plus subscription.
 
-It's better to use the web interface if you plan on having very long chat interactions with GPT-4 (requires a ChatGPT Plus subscription, though). Otherwise it will cost you too much.
+The LLM-Toolbox goes beyond just tools; it also offers a comprehensive collection of prompt templates located in the [`prompt-templates/`](https://github.com/sderev/llm-toolbox/tree/main/prompt-templates) directory. These templates cater to a broad range of situations and are crafted to enhance your engagement with language models. If you're unsure about prompt structuring or want to boost the efficacy of your existing prompts, these templates serve as a great starting point.
+
+You're encouraged to browse these templates and modify them to fit your unique requirements.
 
 ## Isn't the OpenAI API expensive?
 
@@ -176,7 +186,13 @@ Once you have your API key, set it as an environment variable:
 
 Instructions on how to use each of the tools are included in the individual directories under [tools/](https://github.com/sderev/llm-toolbox/tree/main/tools). This is also where I give some tricks and tips on their usage 💡👀💭.
 
-Here's a brief overview:
+Note that LMT is the main tool in the LLM-Toolbox. All of its options apply to (almost) all of the other tools. For instance, you change the model to GPT-4 with `-m 4` or add emojis with `--emoji`. Refer to the [LMT's documentation](https://github.com/sderev/lmt) for more information. 
+
+* **Reading from `stdin`**: Almost all of the tools can read from `stdin`. For instance: `cat my_text.md | summarize`.
+
+* **Output Redirection**: You can use output redirections with the tools. For instance: `cat my_text.md | critique --raw > critique_of_my_text.md`
+
+Here's a brief overview of the tools:
 
 ### LMT
 
@@ -193,6 +209,12 @@ Here's a brief overview:
 The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) tool is designed to streamline your `git` workflow by automatically generating meaningful commit messages for your code changes.
 
 ![demo_0](https://github.com/sderev/llm-toolbox/assets/24412384/d41985d5-d8a2-4622-9ef7-643176cdc741)
+___
+
+### Codereview
+
+The [`Codereview`](https://github.com/sderev/llm-toolbox/tree/main/tools/codereview) tool accepts a file or a piece of text as input and provides an in-depth analysis of the code. It can identify potential issues, suggest improvements, and even detect security vulnerabilities. The Codereview tool is capable of handling a variety of programming languages, and its feedback can serve as an invaluable resource for developers seeking to enhance the quality of their code. 
+
 ___
 
 ### VocabMaster
@@ -233,11 +255,55 @@ The [`translate`](https://github.com/sderev/llm-toolbox/tree/main/tools/translat
 
 ![translate](https://github.com/sderev/llm-toolbox/assets/24412384/505237c9-7735-4db6-aa4a-63c3ed2867a7)
 
-## Prompt Templates
+___
 
-In addition to the various tools provided, the LLM-Toolbox includes a collection of prompt templates in the [`prompts/`](https://github.com/sderev/llm-toolbox/tree/main/prompts) directory. These templates cover a wide range of scenarios and are designed to optimize your interaction with language models. They are an excellent starting point if you're not sure how to structure your prompts or if you're seeking to improve the effectiveness of your current prompts.
+### Cheermeup
 
-Please feel free to explore these templates and adapt them to suit your specific needs.
+The [`cheermeup`](https://github.com/sderev/llm-toolbox/tree/main/tools/cheermeup) tool is designed to uplift your spirits based on your current mood. Whether you're feeling down or just need a little pick-me-up, this tool uses a variety of methods to bring a smile to your face and brighten your day.
+
+___
+
+### Critique
+
+The [`critique`](https://github.com/sderev/llm-toolbox/tree/main/tools/critique) tool is your personal constructive text critic, designed to analyze a given piece of text and provide detailed, insightful feedback. It enables users to enhance their writing by addressing potential shortcomings and improving the overall quality.
+
+___
+
+### Explain
+
+The [`explain`](https://github.com/sderev/llm-toolbox/tree/main/tools/explain) tool helps to clarify complex concepts. When given a concept, it presents a comprehensive and straightforward explanation, aiding in understanding and knowledge retention.
+
+___
+
+### Lessonize
+
+The [`lessonize`](https://github.com/sderev/llm-toolbox/tree/main/tools/lessonize) tool transforms any piece of text into an informative lesson. Whether you're a teacher looking for instructional material or a student looking to further understand a subject, this tool makes learning more accessible.
+
+___
+
+### Pathlearner
+
+The [`pathlearner`](https://github.com/sderev/llm-toolbox/tree/main/tools/pathlearner) tool provides a comprehensive study plan for a given topic. Whether you're studying for an exam or learning a new subject, this tool creates a structured, step-by-step plan that aids in understanding and mastering the material.
+
+___
+
+### Study
+
+The [`study`](https://github.com/sderev/llm-toolbox/tree/main/tools/study) tool is a comprehensive guide that generates study material for a particular topic or content. It helps students to better prepare for exams, giving them access to tailored study material designed to enhance their learning experience.
+
+___
+
+### Summarize
+
+The [`summarize`](https://github.com/sderev/llm-toolbox/tree/main/tools/summarize) tool provides succinct summaries of a web page, lengthy texts, or the content of given files. It's perfect for extracting key points and crucial information from vast amounts of data, saving users time and effort.
+
+___
+
+### Teachlib
+
+The [`teachlib`](https://github.com/sderev/llm-toolbox/tree/main/tools/teachlib) tool is designed to provide comprehensive lessons on various libraries. By simplifying complex aspects and focusing on the core functionalities, this tool helps users to understand and effectively utilize different libraries.
+
+___
 
 ## License
 
