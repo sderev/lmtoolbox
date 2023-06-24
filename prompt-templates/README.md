@@ -13,7 +13,7 @@ This page contains a collection of ChatGPT prompts for a variety of use cases. E
     1. [`pathlearner`](#pathlearner): Provide a study plan for a given topic.
     1. [`proofread`](#proofread): Proofread a piece of text.
     1. [`study`](#study): Generate study material for a topic or from the content.
-    1. [`summarize`](#summarize): Summarize the text, the content of a given file, or a...
+    1. [`summarize`](#summarize): Summarize the text, the content of a given file or a web page.
     1. [`teachlib`](#teachlib): Teach a library.
     1. [`thesaurus`](#thesaurus): This is the thesaurus command.
     1. [`translate`](#translate): Translate a word or sentence.
@@ -62,11 +62,11 @@ Proofread a piece of text. [Use this prompt](https://chat.openai.com/share/84f58
 
 ### `study`
 
-Generate study material for a topic or from the content... [Use this prompt](https://chat.openai.com/share/1f764738-388c-4978-b3ce-6d983bcb7eef)
+Generate study material for a topic or from the content of a file. [Use this prompt](https://chat.openai.com/share/1f764738-388c-4978-b3ce-6d983bcb7eef)
 
 ### `summarize`
 
-Summarize the text, the content of a given file, or a... [Use this prompt](https://chat.openai.com/share/8e3007af-7a8c-4a4c-b044-2c6f612b2089)
+Summarize the text, the content of a given file or a web page. [Use this prompt](https://chat.openai.com/share/8e3007af-7a8c-4a4c-b044-2c6f612b2089)
 
 ### `teachlib`
 
