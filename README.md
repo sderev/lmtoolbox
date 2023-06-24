@@ -6,7 +6,7 @@ LLM-Toolbox is currently under active development. Your feedback is crucial for 
 
 ---
 
-LLM-Toolbox is an ensemble of AI-powered command-line tools designed to modernize your workflow in the terminal. Built using OpenAI's ChatGPT, the tools in this toolbox can generate automatic commit messages, perform dictionary and thesaurus quesries, translate text, proofread content, enrich language learning, and automate shell commands, among others.
+LLM-Toolbox is an ensemble of AI-powered command-line tools designed to modernize your workflow in the terminal. Built using OpenAI's ChatGPT, the tools in this toolbox can generate automatic commit messages, perform dictionary and thesaurus queries, translate text, proofread content, enrich language learning, and automate shell commands, among others.
 
 Additionally, the toolbox provides an array of [prompt templates](#prompt-templates) that can serve as a valuable resource, whether you're new to using languages models or you're an experienced user.
 
@@ -194,30 +194,30 @@ Note that LMT is the main tool in the LLM-Toolbox. All of its options apply to (
 
 Here's a brief overview of the tools:
 
-### LMT
+### [LMT](https://github.com/sderev/lmt)
 
 [LMT](https://github.com/sderev/lmt) empowers you to interact directly with ChatGPT from the comfort of your terminal. One of the core features of `lmt` is its ability to facilitate the creation of custom templates, enabling you to design your personalized toolbox of CLI applications. You can easily install its standalone version from [the project's repository](https://github.com/sderev/lmt).
 
-### ShellGenius
+### [ShellGenius](https://github.com/sderev/shellgenius)
 
 [ShellGenius](https://github.com/sderev/shellgenius) is an intuitive CLI tool designed to enhance your command-line experience by turning your task descriptions into efficient shell commands. Check out the project on [its dedicated repository](https://github.com/sderev/shellgenius).
 
 ![shellgenius](https://github.com/sderev/llm-toolbox/assets/24412384/688d9a1a-f351-42d0-9f4d-06a9a6d1909a)
 
-### Commitgen
+### [Commitgen](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen)
 
 The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) tool is designed to streamline your `git` workflow by automatically generating meaningful commit messages for your code changes.
 
 ![demo_0](https://github.com/sderev/llm-toolbox/assets/24412384/d41985d5-d8a2-4622-9ef7-643176cdc741)
 ___
 
-### Codereview
+### [Codereview](https://github.com/sderev/llm-toolbox/tree/main/tools/codereview)
 
 The [`Codereview`](https://github.com/sderev/llm-toolbox/tree/main/tools/codereview) tool accepts a file or a piece of text as input and provides an in-depth analysis of the code. It can identify potential issues, suggest improvements, and even detect security vulnerabilities. The Codereview tool is capable of handling a variety of programming languages, and its feedback can serve as an invaluable resource for developers seeking to enhance the quality of their code. 
 
 ___
 
-### VocabMaster
+### [VocabMaster](https://github.com/sderev/vocabmaster)
 
 Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), a CLI tool designed to help you record vocabulary, access translations and examples, and seamlessly import them into Anki for an optimized language learning experience. Check out the project on [its dedicated repository](https://github.com/sderev/vocabmaster).
 
@@ -225,7 +225,7 @@ Master new languages with [VocabMaster](https://github.com/sderev/vocabmaster), 
 
 ___
 
-### Thesaurus
+### [Thesaurus](https://github.com/sderev/llm-toolbox/tree/main/tools/thesaurus)
 
 The [`thesaurus`](https://github.com/sderev/llm-toolbox/tree/main/tools/thesaurus) tool takes a word or a phrase as input and provides a list of synonyms and antonyms.
 
@@ -233,7 +233,7 @@ The [`thesaurus`](https://github.com/sderev/llm-toolbox/tree/main/tools/thesauru
 
 ___
 
-### Define
+### [Define](https://github.com/sderev/llm-toolbox/tree/main/tools/define)
 
 The [`define`](https://github.com/sderev/llm-toolbox/tree/main/tools/define) tool takes a word as input and provides its definition along with an example sentence using the word.
 
@@ -241,7 +241,7 @@ The [`define`](https://github.com/sderev/llm-toolbox/tree/main/tools/define) too
 
 ___
 
-### Proofread
+### [Proofread](https://github.com/sderev/llm-toolbox/tree/main/tools/proofread)
 
 The [`proofread`](https://github.com/sderev/llm-toolbox/tree/main/tools/proofread) tool takes a sentence as input and provides a corrected version of it, if needed, along with an explanation of the corrections.
 
@@ -249,7 +249,7 @@ The [`proofread`](https://github.com/sderev/llm-toolbox/tree/main/tools/proofrea
 
 ___
 
-### Translate
+### [Translate](https://github.com/sderev/llm-toolbox/tree/main/tools/translate)
 
 The [`translate`](https://github.com/sderev/llm-toolbox/tree/main/tools/translate) tool takes a sentence and a target language as input and provides the translated sentence in the target language.
 
@@ -257,49 +257,49 @@ The [`translate`](https://github.com/sderev/llm-toolbox/tree/main/tools/translat
 
 ___
 
-### Cheermeup
+### [Cheermeup](https://github.com/sderev/llm-toolbox/tree/main/tools/cheermeup)
 
 The [`cheermeup`](https://github.com/sderev/llm-toolbox/tree/main/tools/cheermeup) tool is designed to uplift your spirits based on your current mood. Whether you're feeling down or just need a little pick-me-up, this tool uses a variety of methods to bring a smile to your face and brighten your day.
 
 ___
 
-### Critique
+### [Critique](https://github.com/sderev/llm-toolbox/tree/main/tools/critique)
 
 The [`critique`](https://github.com/sderev/llm-toolbox/tree/main/tools/critique) tool is your personal constructive text critic, designed to analyze a given piece of text and provide detailed, insightful feedback. It enables users to enhance their writing by addressing potential shortcomings and improving the overall quality.
 
 ___
 
-### Explain
+### [Explain](https://github.com/sderev/llm-toolbox/tree/main/tools/explain)
 
 The [`explain`](https://github.com/sderev/llm-toolbox/tree/main/tools/explain) tool helps to clarify complex concepts. When given a concept, it presents a comprehensive and straightforward explanation, aiding in understanding and knowledge retention.
 
 ___
 
-### Lessonize
+### [Lessonize](https://github.com/sderev/llm-toolbox/tree/main/tools/lessonize)
 
 The [`lessonize`](https://github.com/sderev/llm-toolbox/tree/main/tools/lessonize) tool transforms any piece of text into an informative lesson. Whether you're a teacher looking for instructional material or a student looking to further understand a subject, this tool makes learning more accessible.
 
 ___
 
-### Pathlearner
+### [Pathlearner](https://github.com/sderev/llm-toolbox/tree/main/tools/pathlearner)
 
 The [`pathlearner`](https://github.com/sderev/llm-toolbox/tree/main/tools/pathlearner) tool provides a comprehensive study plan for a given topic. Whether you're studying for an exam or learning a new subject, this tool creates a structured, step-by-step plan that aids in understanding and mastering the material.
 
 ___
 
-### Study
+### [Study](https://github.com/sderev/llm-toolbox/tree/main/tools/study)
 
 The [`study`](https://github.com/sderev/llm-toolbox/tree/main/tools/study) tool is a comprehensive guide that generates study material for a particular topic or content. It helps students to better prepare for exams, giving them access to tailored study material designed to enhance their learning experience.
 
 ___
 
-### Summarize
+### [Summarize](https://github.com/sderev/llm-toolbox/tree/main/tools/summarize)
 
 The [`summarize`](https://github.com/sderev/llm-toolbox/tree/main/tools/summarize) tool provides succinct summaries of a web page, lengthy texts, or the content of given files. It's perfect for extracting key points and crucial information from vast amounts of data, saving users time and effort.
 
 ___
 
-### Teachlib
+### [Teachlib](https://github.com/sderev/llm-toolbox/tree/main/tools/teachlib)
 
 The [`teachlib`](https://github.com/sderev/llm-toolbox/tree/main/tools/teachlib) tool is designed to provide comprehensive lessons on various libraries. By simplifying complex aspects and focusing on the core functionalities, this tool helps users to understand and effectively utilize different libraries.
 
@@ -309,3 +309,6 @@ ___
 
 This project is licensed under the terms of the Apache License 2.0.
 
+___
+
+<https://github.com/sderev/llm-toolbox>
