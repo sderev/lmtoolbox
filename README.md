@@ -50,11 +50,11 @@ I've created video demos to help you see the LLM-Toolbox in action and understan
 
 ## Prompt Templates 
 
-If you're less familiar with terminal interfaces, or if you simply prefer the convenience of a web interface, you'll find our [ChatGPT web interface templates](https://github.com/sderev/llm-toolbox/tree/main/prompt-templates) quite helpful. Particularly for longer chat interactions with GPT-4, the web interface is advantageous, although it does necessitate a ChatGPT Plus subscription.
+For those less experienced with terminal interfaces or those preferring the convenience of a web interface, the [ChatGPT web interface templates](https://github.com/sderev/llm-toolbox/tree/main/prompt-templates) in the LLM-Toolbox can prove incredibly useful. These templates offer a broad spectrum of pre-structured prompts designed to enhance your engagement with ChatGPT, particularly in the context of longer chat interactions with GPT-4 in order to avoid expensive API costs.
 
-The LLM-Toolbox goes beyond just tools; it also offers a comprehensive collection of prompt templates located in the [`prompt-templates/`](https://github.com/sderev/llm-toolbox/tree/main/prompt-templates) directory. These templates cater to a broad range of situations and are crafted to enhance your engagement with language models. If you're unsure about prompt structuring or want to boost the efficacy of your existing prompts, these templates serve as a great starting point.
+These templates, found in the [`prompt-templates/`](https://github.com/sderev/llm-toolbox/tree/main/prompt-templates) directory, cater to various situations and are an excellent resource if you're uncertain about structuring prompts or seek to improve the effectiveness of your existing ones.
 
-You're encouraged to browse these templates and modify them to fit your unique requirements.
+Feel free to explore these templates and adjust them to better suit your individual needs.
 
 ## Isn't the OpenAI API expensive?
 
