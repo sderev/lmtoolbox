@@ -190,7 +190,7 @@ Note that LMT is the main tool in the LLM-Toolbox. All of its options apply to (
 
 * **Reading from `stdin`**: Almost all of the tools can read from `stdin`. For instance: `cat my_text.md | summarize`.
 
-* **Output Redirection**: You can use output redirections with the tools. For instance: `cat my_text.md | critique --raw > critique_of_my_text.md`
+* **Output Redirection**: You can use output redirections with the tools. For instance: `cat my_text.md | critique > critique_of_my_text.md`
 
 Here's a brief overview of the tools:
 
