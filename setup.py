@@ -5,7 +5,6 @@ from pathlib import Path
 import shutil
 
 VERSION = "0.1.5"
-print("test 1")  # added debug print
 
 
 def read_requirements():

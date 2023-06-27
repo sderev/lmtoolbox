@@ -290,12 +290,19 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     )
 
     # Get only the content of the ChatGPT request
-    commit_message = commit_message[0].strip()
+    try:
+        commit_message = commit_message[0].strip()
+    except IndexError as error:
+        click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
+        return
+    except TypeError:
+        click.echo("No commit message generated. Aborting commit.")
+        return
+
 
     # Clean `^M` characters
     commit_message = commit_message.replace("\r", "")
 
-    # click.echo(commit_message) #TODO: delete?
     click.echo("\n---\n")
 
     choice = click.prompt(
