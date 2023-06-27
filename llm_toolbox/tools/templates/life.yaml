@@ -4,7 +4,7 @@ user_info:
   life_expectancy: 28470 # Average life expectancy in days, approximately 78 years
 
 system: >
-  Write a thoughtful, genuine message for {user_name},
+  As a friend, write a thoughtful, genuine message for {user_name},
   who has about {remaining_days} days ahead of them,
   which represents approximately {percentage}% of their expected life span.
   Based on this percentage, provide a unique perspective
