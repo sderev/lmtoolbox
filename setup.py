@@ -4,7 +4,7 @@ from setuptools.command.install import install
 from pathlib import Path
 import shutil
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 
 class PostDevelopCommand(develop):
