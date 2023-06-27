@@ -1,11 +1,11 @@
-from functools import wraps
-from pathlib import Path
 import os
 import re
 import requests
 import subprocess
 import sys
 import tempfile
+from functools import wraps
+from pathlib import Path
 
 import click
 import validators
@@ -46,6 +46,9 @@ def cli():
 
 
 def common_options(f):
+    """
+    Common options for all commands.
+    """
     @wraps(f)
     @click.option("--emoji", is_flag=True, help="Add emotions and emojis.")
     @click.option(
@@ -323,7 +326,7 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
 
     prompt_input = ""
 
-    if is_valid_url(source_str):
+    if validators.url(source_str):
         source_content = requests.get(source_str).text
         prompt_input = strip_tags(input=source_content, minify=True)
     else:
@@ -505,7 +508,10 @@ def process_command(
             )
             prompt_input = sys.stdin.read()
             click.echo()
-    prompt_input = "".join(prompt_input).rstrip()
+    if template == "summarize":
+        prompt_input = "".join(prompt_input).rstrip()
+    else:
+        prompt_input = " ".join(prompt_input).rstrip()
 
     return prepare_and_generate_response(
         system=None,
@@ -519,10 +525,6 @@ def process_command(
         raw=raw,
         debug=debug,
     )
-
-
-def is_valid_url(url):
-    return validators.url(url)
 
 
 if __name__ == "__main__":
