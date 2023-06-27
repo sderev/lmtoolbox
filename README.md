@@ -298,6 +298,12 @@ The [`lessonize`](https://github.com/sderev/llm-toolbox/tree/main/tools/lessoniz
 
 ___
 
+### [Life](https://github.com/sderev/llm-toolbox/tree/main/tools/life)
+
+The [`life`](https://github.com/sderev/llm-toolbox/tree/main/tools/life) tool offers a unique perspective on the passage of time, presenting thoughtful messages based on your life expectancy statistics. Whether you're seeking a novel way to reflect on your life journey or need a gentle reminder of the beauty and preciousness of life's uncertainty, this tool provides insightful outputs to provoke meaningful contemplation.
+
+___
+
 ### [Pathlearner](https://github.com/sderev/llm-toolbox/tree/main/tools/pathlearner)
 
 The [`pathlearner`](https://github.com/sderev/llm-toolbox/tree/main/tools/pathlearner) tool provides a comprehensive study plan for a given topic. Whether you're studying for an exam or learning a new subject, this tool creates a structured, step-by-step plan that aids in understanding and mastering the material.
