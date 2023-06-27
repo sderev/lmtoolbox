@@ -80,9 +80,7 @@ Therefore, when considering the cost, it's essential to look beyond the immediat
 
 GPT-3.5 is an excellent model for these tools, offering a cost-effective solution that consistently delivers appropriate responses. I take great care in crafting my prompts and the tools to generate the best results that cater to my own daily needs.
 
-I will continue refining them, if necessary, as time goes on. So stay tuned to this repo and consider giving it a star ⭐!
-
-You'll also be able to update the LLM-Toolbox directly from the CLI 😊.
+I will continue refining them, if necessary, as time goes on. So stay tuned to this repo and consider giving it a star! ⭐
 
 ### Current Costs
 
