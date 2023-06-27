@@ -1,9 +1,12 @@
+import json
 import os
 import re
 import requests
+import shutil
 import subprocess
 import sys
 import tempfile
+from datetime import datetime
 from functools import wraps
 from pathlib import Path
 
@@ -13,6 +16,48 @@ from strip_tags.lib import strip_tags
 
 from lmt_cli.lib import *
 from lmt_cli.cli import VALID_MODELS
+
+
+def install_templates():
+    """
+    Installs the templates in the user's home directory.
+    """
+    dest_path = Path.home() / ".config/lmt/templates"
+    dest_path.mkdir(parents=True, exist_ok=True)
+
+    config_file = Path.home() / ".config/lmt/config.json"
+    config_file.touch(exist_ok=True)
+
+    # Load existing config if it exists, else start with empty dictionary
+    with config_file.open("r") as f:
+        try:
+            config = json.load(f)
+        except json.JSONDecodeError:
+            click.echo(f"{click.style('Installing templates...', fg='yellow')}")
+            config = {}
+
+    src_path = Path(__file__).parent / "tools/templates"
+    for file in src_path.glob("*.yaml"):
+        destination = dest_path / file.name
+
+        # Only copy file if it does not exist
+        if not destination.exists():
+            shutil.copy2(file, dest_path)
+
+            # Update the config file with the copied template
+            template_name = file.stem
+            config[template_name] = str(dest_path / file.name)
+            click.echo(
+                f"{click.style(f'Installed `{template_name}` template.', fg='green')}"
+            )
+
+    # Write the updated config back to the file
+    with config_file.open("w") as f:
+        json.dump(config, f, indent=4)
+    print()
+
+
+install_templates()
 
 
 def validate_model_name(ctx, param, value):
@@ -49,6 +94,7 @@ def common_options(f):
     """
     Common options for all commands.
     """
+
     @wraps(f)
     @click.option("--emoji", is_flag=True, help="Add emotions and emojis.")
     @click.option(
@@ -474,6 +520,60 @@ def teachlib(
         no_stream,
         raw,
         debug,
+    )
+
+
+@cli.command()
+@click.pass_context
+@common_options
+def life(ctx, model, emoji, temperature, tokens, no_stream, raw, debug):
+    """
+    Comment on the remaining lifespan of a person.
+    """
+    template_file = get_template_content("life")
+    user_info = template_file["user_info"]
+
+    if user_info["name"] is None:
+        user_name = click.prompt("What is your name?", type=str)
+    else:
+        user_name = user_info["name"]
+
+    if user_info["date_of_birth"] is None:
+        date_of_birth = click.prompt(
+            "What is your date of birth? (YYYY-MM-DD)", type=str
+        )
+    else:
+        date_of_birth = user_info["date_of_birth"]
+
+    life_expectancy = user_info["life_expectancy"]
+    system = template_file["system"]
+
+    # Update the template file
+    template_file["user_info"]["name"] = user_name
+    template_file["user_info"]["date_of_birth"] = date_of_birth
+    template_path = TEMPLATES_DIR / "life.yaml"
+    with open(template_path, "w") as outfile:
+        yaml.dump(template_file, outfile, default_flow_style=False)
+
+    date_of_birth = datetime.strptime(user_info["date_of_birth"], "%Y-%m-%d")
+    remaining_days = life_expectancy - (datetime.now() - date_of_birth).days
+    percentage = f"{(remaining_days / life_expectancy) * 100:.2f}"
+
+    system = f"{system}".format(
+        user_name=user_name, remaining_days=remaining_days, percentage=percentage
+    )
+
+    prepare_and_generate_response(
+        system=system,
+        template="",  # No template for this command
+        model=model,
+        emoji=True,
+        prompt_input="",
+        temperature=temperature,
+        tokens=tokens,
+        no_stream=no_stream,
+        raw=raw,
+        debug=debug,
     )
 
 

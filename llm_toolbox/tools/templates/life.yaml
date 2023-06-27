@@ -1,0 +1,18 @@
+user_info:
+  name:
+  date_of_birth:
+  life_expectancy: 28470 # Average life expectancy in days, approximately 78 years
+
+system: >
+  Write a thoughtful, genuine message for {user_name},
+  who has about {remaining_days} days ahead of them,
+  which represents approximately {percentage}% of their expected life span.
+  Based on this percentage, provide a unique perspective
+  on how {user_name} might view their future.
+  Keep in mind that these are statistical estimations
+  and the uncertainty of life is what makes it precious.
+  Make sure to reference these numbers in your message,
+  but avoid sounding overly sentimental or like a self-help book.
+  Rather than using clichéd quotes, try to draw on the wisdom of philosophers,
+  writers or thinkers in a fresh and interesting way.
+  Your message should be concise.
