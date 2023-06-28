@@ -26,7 +26,7 @@ I've created video demos to help you see the LLM-Toolbox in action and understan
     1. [Installing the LLM-Toolbox](#installing-the-llm-toolbox)
     1. [Cloning the LLM-Toolbox Repository](#cloning-the-llm-toolbox-repository)
 1. [Getting Started](#getting-started)
-    1. [Set your OpenAI API key](#set-your-openai-api-key)
+    1. [Configuring your OpenAI API key](#configuring-your-openai-api-key)
 1. [Tools](#tools)
     1. [LMT](#lmt)
     1. [ShellGenius](#shellgenius)
@@ -147,39 +147,21 @@ git clone https://github.com/sderev/llm-toolbox.git
 
 ## Getting Started
 
-### Set your OpenAI API key
+### Configuring your OpenAI API key
 
-LLM-Toolbox requires an OpenAI API key to function. You can obtain a key by signing up for an account at [OpenAI's website](https://platform.openai.com/account/api-keys).
+For LLM-Toolbox to work properly, it is necessary to acquire and configure an OpenAI API key. Follow these steps to accomplish this:
 
-You need to set some usage limit before to be able to use the API. You can configure on your OpenAI account in *Billing -> Usage limits*.
+1. **Acquire the OpenAI API key**: You can do this by creating an account on the [OpenAI website](https://platform.openai.com/account/api-keys). Once registered, you will have access to your unique API key.
 
-Once you have your API key, set it as an environment variable:
+2. **Set usage limit**: Before you start using the API, you need to define a usage limit. You can configure this in your OpenAI account settings by navigating to *Billing -> Usage limits*.
 
-* On macOS and Linux:
-
-  ```bash
-  export OPENAI_API_KEY="your-api-key-here"
-  ```
-
-  To avoid having to type it everyday, you can create a file with the key:
-
-  ```bash
-  echo "your-api-key" > ~/.openai-api-key.txt
-  ```
-
-  **Note:** Remember to replace `"your-api-key"` with your actual API key.
-
-  And then, you can add this to your shell configuration file (`.bashrc`, `.zshrc`, etc.):
+3. **Configure the OpenAI API key**: Once you have your API key, you can set it up by running the `lmt key set` command.
 
     ```bash
-    export OPENAI_API_KEY="$(cat ~/.openai-api-key.txt)"
+    lmt key set
     ```
 
-* On Windows:
-
-  ```
-  setx OPENAI_API_KEY your_key
-  ```
+With these steps, you should now have successfully set up your OpenAI API key, ready for use with the LLM-Toolbox.
 
 ## Tools
 
