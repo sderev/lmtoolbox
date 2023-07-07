@@ -1,11 +1,10 @@
 import json
 import os
-import re
-import requests
 import shutil
 import subprocess
 import sys
 import tempfile
+import requests
 from datetime import datetime
 from functools import wraps
 from pathlib import Path
@@ -28,10 +27,10 @@ def install_templates():
     config_file = Path.home() / ".config/lmt/config.json"
     config_file.touch(exist_ok=True)
 
-    # Load existing config if it exists, else start with empty dictionary
-    with config_file.open("r") as f:
+    # Load existing config if it exists, else create an empty config
+    with config_file.open("r") as file:
         try:
-            config = json.load(f)
+            config = json.load(file)
         except json.JSONDecodeError:
             click.echo(f"{click.style('Installing templates...', fg='yellow')}")
             config = {}
@@ -52,8 +51,8 @@ def install_templates():
             )
 
     # Write the updated config back to the file
-    with config_file.open("w") as f:
-        json.dump(config, f, indent=4)
+    with config_file.open("w") as file:
+        json.dump(config, file, indent=4)
     print()
 
 
@@ -67,9 +66,11 @@ def validate_model_name(ctx, param, value):
     model_name = value.lower()
     if model_name in VALID_MODELS:
         return VALID_MODELS[model_name]
-    elif model_name in VALID_MODELS.values():
+
+    if model_name in VALID_MODELS.values():
         return model_name
-    else:
+
+    if not any(model_name in items for items in VALID_MODELS.items()):
         raise click.BadParameter(f"Invalid model: {model_name}")
 
 
@@ -79,8 +80,7 @@ def validate_temperature(ctx, param, value):
     """
     if 0 <= value <= 2:
         return value
-    else:
-        raise click.BadParameter("Temperature must be between 0 and 2.")
+    raise click.BadParameter("Temperature must be between 0 and 2.")
 
 
 @click.group()
@@ -90,12 +90,12 @@ def cli():
     pass
 
 
-def common_options(f):
+def common_options(function):
     """
     Common options for all commands.
     """
 
-    @wraps(f)
+    @wraps(function)
     @click.option("--emoji", is_flag=True, help="Add emotions and emojis.")
     @click.option(
         "-m",
@@ -140,7 +140,7 @@ def common_options(f):
         help="Print debug information.",
     )
     def wrapper(*args, **kwargs):
-        return f(*args, **kwargs)
+        return function(*args, **kwargs)
 
     return wrapper
 
@@ -298,7 +298,6 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     except TypeError:
         click.echo("No commit message generated. Aborting commit.")
         return
-
 
     # Clean `^M` characters
     commit_message = commit_message.replace("\r", "")
@@ -532,37 +531,45 @@ def teachlib(
 
 @cli.command()
 @click.pass_context
+@click.option("--reset", is_flag=True, help="Reset the template file.")
 @common_options
-def life(ctx, model, emoji, temperature, tokens, no_stream, raw, debug):
+def life(ctx, reset, model, emoji, temperature, tokens, no_stream, raw, debug):
     """
     Comment on the remaining lifespan of a person.
     """
     template_file = get_template_content("life")
     user_info = template_file["user_info"]
 
-    if user_info["name"] is None:
+    if user_info["name"] is None or reset:
         user_name = click.prompt("What is your name?", type=str)
     else:
         user_name = user_info["name"]
 
-    if user_info["date_of_birth"] is None:
-        date_of_birth = click.prompt(
-            "What is your date of birth? (YYYY-MM-DD)", type=str
-        )
-    else:
-        date_of_birth = user_info["date_of_birth"]
+    while True:
+        try:
+            if user_info["date_of_birth"] is None or reset:
+                date_of_birth_str = click.prompt(
+                    "What is your date of birth? (YYYY-MM-DD)", type=str
+                )
+            else:
+                date_of_birth_str = user_info["date_of_birth"]
+            date_of_birth = datetime.strptime(date_of_birth_str, "%Y-%m-%d")
+
+        except ValueError:
+            click.echo("Please enter a valid date.")
+        else:
+            break
 
     life_expectancy = user_info["life_expectancy"]
     system = template_file["system"]
 
     # Update the template file
     template_file["user_info"]["name"] = user_name
-    template_file["user_info"]["date_of_birth"] = date_of_birth
+    template_file["user_info"]["date_of_birth"] = date_of_birth_str
     template_path = TEMPLATES_DIR / "life.yaml"
-    with open(template_path, "w") as outfile:
-        yaml.dump(template_file, outfile, default_flow_style=False)
+    with open(template_path, "w", encoding="UTF-8") as file:
+        yaml.dump(template_file, file, default_flow_style=False)
 
-    date_of_birth = datetime.strptime(user_info["date_of_birth"], "%Y-%m-%d")
     remaining_days = life_expectancy - (datetime.now() - date_of_birth).days
     percentage = f"{(remaining_days / life_expectancy) * 100:.2f}"
 
