@@ -64,6 +64,7 @@ def validate_model_name(ctx, param, value):
     Validates the model name parameter.
     """
     model_name = value.lower()
+
     if model_name in VALID_MODELS:
         return VALID_MODELS[model_name]
 
@@ -333,9 +334,11 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     # Open git commit with temp file as template
     try:
         if choice == "yes":
-            subprocess.run(["git", "commit", "-F", temp_path])
+            subprocess.run(["git", "commit", "-F", temp_path], check=True)
         elif choice == "edit":
-            subprocess.run(["git", "commit", "-e", "-t", temp_path])
+            subprocess.run(["git", "commit", "-e", "-t", temp_path], check=True)
+    except subprocess.CalledProcessError as error:
+        click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
     finally:
         os.remove(temp_path)
 
@@ -379,7 +382,7 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
     prompt_input = ""
 
     if validators.url(source_str):
-        source_content = requests.get(source_str).text
+        source_content = requests.get(source_str, timeout=5).text
         prompt_input = strip_tags(input=source_content, minify=True)
     else:
         if source:
@@ -622,6 +625,7 @@ def process_command(
             )
             prompt_input = sys.stdin.read()
             click.echo()
+
     if template == "summarize":
         prompt_input = "".join(prompt_input).rstrip()
     else:
