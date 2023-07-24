@@ -10,11 +10,14 @@ from pathlib import Path
 
 import click
 import requests
-import validators
 from strip_tags.lib import strip_tags
+import validators
+import yaml
 
-from lmt_cli.lib import *
-from lmt_cli.cli import VALID_MODELS, validate_model_name, validate_temperature
+
+from lmt_cli.cli import validate_model_name, validate_temperature
+from lmt_cli.lib import prepare_and_generate_response
+from lmt_cli.templates import get_template_content, TEMPLATES_DIR
 
 
 def install_templates():
@@ -509,7 +512,7 @@ def teachlib(
 
 @cli.command()
 @click.pass_context
-@click.option("--reset", is_flag=True, help="Reset the name and date of birth.")
+@click.option("--reset", is_flag=True, help="Reset the name and the date of birth.")
 @common_options
 def life(ctx, reset, model, emoji, temperature, tokens, no_stream, raw, debug):
     """
