@@ -1,12 +1,6 @@
 # LLM-Toolbox
 
-**Development Status**: 
-
-LLM-Toolbox is currently under active development. Your feedback is crucial for this ongoing journey of refinement. Please share your thoughts, experiences, and suggestions. If you find this project beneficial, consider expression your support by giving it a star ⭐😊.
-
----
-
-LLM-Toolbox is an ensemble of AI-powered command-line tools designed to modernize your workflow in the terminal. Built using OpenAI's ChatGPT, the tools in this toolbox can generate automatic commit messages, perform dictionary and thesaurus queries, translate text, proofread content, enrich language learning, and automate shell commands, among others.
+LLM-Toolbox is an ensemble of AI-powered CLI tools designed to modernize your workflow in the terminal. Built using OpenAI's ChatGPT, the tools in this toolbox can generate automatic commit messages, perform dictionary and thesaurus queries, translate text, proofread content, enrich language learning, and automate shell commands, among others. Obviously, you can also interact with ChatGPT directly.
 
 Additionally, the toolbox provides an array of [prompt templates](#prompt-templates) that can serve as a valuable resource, whether you're new to using languages models or you're an experienced user.
 
