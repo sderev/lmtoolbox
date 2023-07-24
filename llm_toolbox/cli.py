@@ -4,22 +4,22 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import requests
 from datetime import datetime
 from functools import wraps
 from pathlib import Path
 
 import click
+import requests
 import validators
 from strip_tags.lib import strip_tags
 
 from lmt_cli.lib import *
-from lmt_cli.cli import VALID_MODELS
+from lmt_cli.cli import VALID_MODELS, validate_model_name, validate_temperature
 
 
 def install_templates():
     """
-    Installs the templates in the user's home directory.
+    Installs the templates in ~/.config/lmt/templates.
     """
     dest_path = Path.home() / ".config/lmt/templates"
     dest_path.mkdir(parents=True, exist_ok=True)
@@ -57,31 +57,6 @@ def install_templates():
 
 
 install_templates()
-
-
-def validate_model_name(ctx, param, value):
-    """
-    Validates the model name parameter.
-    """
-    model_name = value.lower()
-
-    if model_name in VALID_MODELS:
-        return VALID_MODELS[model_name]
-
-    if model_name in VALID_MODELS.values():
-        return model_name
-
-    if not any(model_name in items for items in VALID_MODELS.items()):
-        raise click.BadParameter(f"Invalid model: {model_name}")
-
-
-def validate_temperature(ctx, param, value):
-    """
-    Validates the temperature parameter.
-    """
-    if 0 <= value <= 2:
-        return value
-    raise click.BadParameter("Temperature must be between 0 and 2.")
 
 
 @click.group()
