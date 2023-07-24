@@ -6,7 +6,7 @@ user_info:
 system: >
   As a friend, write a thoughtful, genuine message for {user_name},
   who has about {remaining_days} days ahead of them,
-  which represents approximately {percentage}% of their expected life span.
+  which represents approximately {percentage} % of their expected life span.
   Based on this percentage, provide a unique perspective
   on how {user_name} might view their future.
   Keep in mind that these are statistical estimations
