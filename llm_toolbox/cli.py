@@ -38,6 +38,10 @@ def install_templates():
             click.echo(f"{click.style('Installing templates...', fg='yellow')}")
             config = {}
 
+    # Create the 'tools' key if it does not exist
+    if "tools" not in config:
+        config["tools"] = {}
+
     src_path = Path(__file__).parent / "tools/templates"
     for file in src_path.glob("*.yaml"):
         destination = dest_path / file.name
@@ -48,15 +52,14 @@ def install_templates():
 
             # Update the config file with the copied template
             template_name = file.stem
-            config[template_name] = str(dest_path / file.name)
+            config["tools"][template_name] = str(dest_path / file.name)
             click.echo(
-                f"{click.style(f'Installed `{template_name}` template.', fg='green')}"
+                f"{click.style(f'Installed `{template_name}` template.', fg='green')}\n"
             )
 
     # Write the updated config back to the file
     with config_file.open("w") as file:
         json.dump(config, file, indent=4)
-    print()
 
 
 install_templates()
