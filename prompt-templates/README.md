@@ -12,7 +12,7 @@ This page contains a collection of ChatGPT prompts for a variety of use cases. E
     1. [Lessonize](https://chat.openai.com/share/87cda538-1f5f-4d28-96ac-6285e3583ab7): Create a lesson from a piece of text.
     1. [Path Learner](https://chat.openai.com/share/30eb3b5a-d24e-41ec-9392-fe6e036fbb7a): Provide a study plan for a given topic.
     1. [Proofread](https://chat.openai.com/share/84f58f83-f0e3-4d93-a4b6-54388669c40c): Proofread a piece of text.
-    1. [Study](https://chat.openai.com/share/1f764738-388c-4978-b3ce-6d983bcb7eef): Generate study material for a topic or from the content.
+    1. [Study](https://chat.openai.com/share/1f764738-388c-4978-b3ce-6d983bcb7eef): Generate study material for a topic or from the content of a file.
     1. [Summarize](https://chat.openai.com/share/8e3007af-7a8c-4a4c-b044-2c6f612b2089): Summarize the text, the content of a given file or a web page.
     1. [Teach a Library](https://chat.openai.com/share/8b9b48b1-809f-45f7-87fa-47022b5f3d66): Teach a library.
     1. [Thesaurus](https://chat.openai.com/share/8859fa7b-a01c-4a4c-a665-ce7c1db65eef): This is the thesaurus command.
