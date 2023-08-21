@@ -245,7 +245,7 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
 
     # Check if there are staged changes
     try:
-        diff_output = subprocess.check_output(["git", "diff", "--staged"])
+        diff_output = subprocess.check_output(["git", "diff", "--staged"]).decode("utf-8")
     except subprocess.CalledProcessError as error:
         click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
         return
@@ -607,10 +607,11 @@ def process_command(
             prompt_input = sys.stdin.read()
             click.echo()
 
-    if template == "summarize":
-        prompt_input = "".join(prompt_input).rstrip()
-    else:
-        prompt_input = " ".join(prompt_input).rstrip()
+    match template:
+        case "summarize" | "commitgen":
+            prompt_input = "".join(prompt_input).strip()
+        case _:
+            prompt_input = " ".join(prompt_input).strip()
 
     return prepare_and_generate_response(
         system=None,
