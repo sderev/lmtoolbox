@@ -1,10 +1,10 @@
 click
-lmt-cli
+lmt-cli==0.0.16
 openai
 PyYAML
 rich
-shellgenius
+shellgenius==0.1.14
 strip-tags
 tiktoken
 validators
-vocabmaster
+vocabmaster==0.1.11

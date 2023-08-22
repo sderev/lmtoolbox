@@ -1,7 +1,6 @@
-import shutil
 from setuptools import setup, find_packages
 
-VERSION = "0.1.11"
+VERSION = "0.1.12"
 
 
 def read_requirements():
@@ -62,5 +61,5 @@ setup(
             "vocabmaster=vocabmaster.cli:vocabmaster",
         ]
     },
-    python_requires=">=3.8",
+    python_requires=">=3.10",
 )
