@@ -1,5 +1,5 @@
 click
-lmt-cli==0.0.20
+lmt-cli==0.0.21
 openai
 PyYAML
 rich
