@@ -10,15 +10,9 @@ I've created video demos to help you see the LLM-Toolbox in action and understan
 ## Table of Contents
 
 1. [Prompt Templates](#prompt-templates)
-1. [Isn't the OpenAI API expensive?](#isnt-the-openai-api-expensive)
-1. [The Value of Investing in LLM-Toolbox](#the-value-of-investing-in-llm-toolbox)
-    1. [Is GPT-3.5 Sufficient for Those Tools?](#is-gpt-35-sufficient-for-those-tools)
-    1. [Current Costs](#current-costs)
 1. [Installation](#installation)
     1. [pip](#pip)
     1. [`pipx`, the Easy Way](#pipx-the-easy-way)
-    1. [Installing the LLM-Toolbox](#installing-the-llm-toolbox)
-    1. [Cloning the LLM-Toolbox Repository](#cloning-the-llm-toolbox-repository)
 1. [Getting Started](#getting-started)
     1. [Configuring your OpenAI API key](#configuring-your-openai-api-key)
 1. [Tools](#tools)
@@ -49,44 +43,6 @@ For those less experienced with terminal interfaces or those preferring the conv
 
 These templates, found in the [`prompt-templates/`](https://github.com/sderev/llm-toolbox/tree/main/prompt-templates) directory, cater to various situations and are an excellent resource if you're uncertain about structuring prompts or seek to improve the effectiveness of your existing ones.
 
-Feel free to explore these templates and adjust them to better suit your individual needs.
-
-## Isn't the OpenAI API expensive?
-
-A lot of people are afraid that these tools will cost them too much. But the truth is, as long as you're not sending too many requests to GPT-4, you won't have exorbitant bills. On the contrary, this may surprise you, but I'm pretty confident that the majority of people won't exceed a cost of $3 to $5 per month, as long as they continue to use GPT-3.5, even if they use these tools more than a hundred times a day.
-
-Also, there's a safeguard: **you can configure a soft and a hard usage limit on your OpenAI account**. This ensures that you won't ever be taken by surprise.
-
-* Soft limit: You receive a notification email.
-* Hard limit: Subsequent requests will be rejected.
-
-## The Value of Investing in LLM-Toolbox
-
-Well... in giving your money to OpenAI, actually.
-
-Even if you have a monthly expense of more than a dollar, it's well worth looking at the huge benefits you'll receive from utilizing the tools in the LLM-Toolbox. These innovative solutions provide users with powerful capabilities that can **significantly streamline tasks, improve productivity, and foster creativity**.
-
-Particularly, let's consider [ShellGenius](#shellgenius), a remarkable tool within the LLM-Toolbox. It enhances the command-line experience by translating task descriptions into efficient shell commands, a feat that not only saves time but also reduces the possibility of human error. This tool is extremely beneficial for both beginners, who may not be fluent in shell commands, and experienced users who can streamline their command-line tasks by simply describing what they wish to accomplish.
-
-Therefore, when considering the cost, it's essential to look beyond the immediate dollar value and evaluate the considerable time, effort, and resources you stand to save. The utility and value derived from such tools often outweigh the minimal monthly cost. The price of these tools should not be a deterrent but rather seen as an investment in enhancing your efficiency and productivity.
-
-### Is GPT-3.5 Sufficient for Those Tools?
-
-GPT-3.5 is an excellent model for these tools, offering a cost-effective solution that consistently delivers appropriate responses. I take great care in crafting my prompts and the tools to generate the best results that cater to my own daily needs.
-
-I will continue refining them, if necessary, as time goes on. So stay tuned to this repo and consider giving it a star! ⭐
-
-### Current Costs
-
-At the time of writing (2023-06-17T13:35:56+02:00), these are the costs:
-
-| Model            | Prompt Cost   | Response Cost   |
-|------------------|--------------:|----------------:|
-| gpt-3.5-turbo    | $0.0015 / 1K  | $0.002 / 1K     |
-| gpt-3.5-turbo-16k| $0.003 / 1K   | $0.004 / 1K     |
-| gpt-4            | $0.03 / 1K    | $0.06 / 1K      |
-| gpt-4-32k        | $0.06 / 1K    | $0.12 / 1K      |
-
 ## Installation
 
 ### pip
@@ -97,46 +53,8 @@ python3 -m pip install llm-toolbox
 
 ### `pipx`, the Easy Way
 
-To use these tools, I recommend that you first install [pipx](https://pypa.github.io/pipx/installation/). It's a package manager for Python that makes the installation and upgrade of CLI apps easy (no more hassle with virtual environments 😌).
-
-* Debian / Ubuntu
-
-    ```bash
-    sudo apt install pipx
-    ```
-
-* macOS    
-
-    ```bash
-    brew install pipx
-    ```
-
-### Installing the LLM-Toolbox
-
-To install the latest stable version of the LLM-Toolbox, simply run this command:
-
 ```bash
 pipx install llm-toolbox
-```
-
-If you want to follow the `main` branch:
-
-```bash
-pipx install git+https://github.com/sderev/llm-toolbox
-```
-
-To upgrade it:
-
-```bash
-pipx upgrade llm-toolbox
-```
-
-### Cloning the LLM-Toolbox Repository
-
-You can clone this repository with the following command:
-
-```bash
-git clone https://github.com/sderev/llm-toolbox.git
 ```
 
 ## Getting Started
