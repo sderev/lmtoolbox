@@ -105,7 +105,7 @@ ___
 
 ### Commitgen
 
-The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) tool is designed to streamline your `git` workflow by automatically generating meaningful commit messages for your code changes.
+The [`commitgen`](https://github.com/sderev/llm-toolbox/tree/main/tools/commitgen) tool is designed to automatically generate a meaningful `git` commit messages for your code changes.
 
 ![demo_0](https://github.com/sderev/llm-toolbox/assets/24412384/37103ef6-7078-4b38-bdb6-bb4c9880ad3f)
 
