@@ -7,4 +7,4 @@ shellgenius==0.1.15
 strip-tags
 tiktoken
 validators
-vocabmaster==0.1.12
+vocabmaster==0.1.13
