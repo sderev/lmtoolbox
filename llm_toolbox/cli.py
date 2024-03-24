@@ -590,11 +590,10 @@ def process_command(
     """
     Process a given command using a specific template and optional lines.
     """
-    match template:
-        case "summarize" | "commitgen":
-            prompt_input = "".join(prompt_input).strip()
-        case _:
-            prompt_input = " ".join(prompt_input).strip()
+    if template in ["summarize", "commitgen"]:
+        prompt_input = "".join(prompt_input).strip()
+    else:
+        prompt_input = " ".join(prompt_input).strip()
 
     if not prompt_input:
         if not sys.stdin.isatty():
