@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.1.28"
+VERSION = "0.1.29"
 
 
 def read_requirements():
@@ -61,5 +61,5 @@ setup(
             "vocabmaster=vocabmaster.cli:vocabmaster",
         ]
     },
-    python_requires=">=3.10",
+    python_requires=">=3.8",
 )
