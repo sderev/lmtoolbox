@@ -10,14 +10,12 @@ from pathlib import Path
 
 import click
 import requests
-from strip_tags.lib import strip_tags
 import validators
 import yaml
-
-
 from lmt_cli.cli import validate_model_name, validate_temperature
 from lmt_cli.lib import prepare_and_generate_response
-from lmt_cli.templates import get_template_content, TEMPLATES_DIR
+from lmt_cli.templates import TEMPLATES_DIR, get_template_content
+from strip_tags.lib import strip_tags
 
 
 def install_templates():
@@ -53,9 +51,7 @@ def install_templates():
             # Update the config file with the copied template
             template_name = file.stem
             config["tools"][template_name] = str(dest_path / file.name)
-            click.echo(
-                f"{click.style(f'Installed `{template_name}` template.', fg='green')}\n"
-            )
+            click.echo(f"{click.style(f'Installed `{template_name}` template.', fg='green')}\n")
 
     # Write the updated config back to the file
     with config_file.open("w") as file:
@@ -97,10 +93,7 @@ def common_options(function):
     @click.option(
         "--tokens",
         is_flag=True,
-        help=(
-            "Count the number of tokens in the prompt, and display the cost of the"
-            " request."
-        ),
+        help=("Count the number of tokens in the prompt, and display the cost of the" " request."),
     )
     @click.option(
         "--no-stream",
@@ -182,9 +175,7 @@ def define(ctx, model, emoji, word, temperature, tokens, no_stream, raw, debug):
     """
     Get a definition for a word.
     """
-    process_command(
-        ctx, "define", model, emoji, word, temperature, tokens, no_stream, raw, debug
-    )
+    process_command(ctx, "define", model, emoji, word, temperature, tokens, no_stream, raw, debug)
 
 
 @cli.command()
@@ -239,14 +230,14 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     # Check if we are in a git repository
     try:
         subprocess.check_output(["git", "rev-parse", "--is-inside-work-tree"])
-    except subprocess.CalledProcessError as error:
+    except subprocess.CalledProcessError:
         click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
         return
 
     # Check if there are staged changes
     try:
         diff_output = subprocess.check_output(["git", "diff", "--staged"]).decode("utf-8")
-    except subprocess.CalledProcessError as error:
+    except subprocess.CalledProcessError:
         click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
         return
 
@@ -274,7 +265,7 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     # Get only the content of the ChatGPT request
     try:
         commit_message = commit_message[0].strip()
-    except IndexError as error:
+    except IndexError:
         click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
         return
     except TypeError:
@@ -318,7 +309,7 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
             subprocess.run(["git", "commit", "-F", temp_path], check=True)
         elif choice == "edit":
             subprocess.run(["git", "commit", "-e", "-t", temp_path], check=True)
-    except subprocess.CalledProcessError as error:
+    except subprocess.CalledProcessError:
         click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
     finally:
         os.remove(temp_path)
@@ -328,9 +319,7 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
 @click.argument("file_to_review", type=click.File("r"), required=False)
 @click.pass_context
 @common_options
-def codereview(
-    ctx, model, emoji, file_to_review, temperature, tokens, no_stream, raw, debug
-):
+def codereview(ctx, model, emoji, file_to_review, temperature, tokens, no_stream, raw, debug):
     """
     Generate a code review for a given file.
 
@@ -388,9 +377,7 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
 @click.argument("work_to_critique", nargs=-1, required=False)
 @click.pass_context
 @common_options
-def critique(
-    ctx, model, emoji, work_to_critique, temperature, tokens, no_stream, raw, debug
-):
+def critique(ctx, model, emoji, work_to_critique, temperature, tokens, no_stream, raw, debug):
     """
     Generate a critique for a given piece of work.
     """
@@ -469,9 +456,7 @@ def cheermeup(ctx, model, emoji, mood, temperature, tokens, no_stream, raw, debu
 @click.argument("study_material", nargs=-1, required=False)
 @click.pass_context
 @common_options
-def study(
-    ctx, model, emoji, study_material, temperature, tokens, no_stream, raw, debug
-):
+def study(ctx, model, emoji, study_material, temperature, tokens, no_stream, raw, debug):
     """
     Generate study material for a topic or from the content of the content of a file.
     """
@@ -493,9 +478,7 @@ def study(
 @click.argument("library_name", nargs=-1, required=False)
 @click.pass_context
 @common_options
-def teachlib(
-    ctx, model, emoji, library_name, temperature, tokens, no_stream, raw, debug
-):
+def teachlib(ctx, model, emoji, library_name, temperature, tokens, no_stream, raw, debug):
     """
     Teach a library.
     """
