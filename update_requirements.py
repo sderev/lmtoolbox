@@ -37,5 +37,5 @@ def update_requirements(packages_to_update, requirements_path="requirements.txt"
 
 
 if __name__ == "__main__":
-    packages_to_update = ["lmt-cli", "shellgenius", "vocabmaster"]
+    packages_to_update = ["lmterminal", "shellgenius", "vocabmaster"]
     update_requirements(packages_to_update)

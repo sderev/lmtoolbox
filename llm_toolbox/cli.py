@@ -12,9 +12,9 @@ import click
 import requests
 import validators
 import yaml
-from lmt_cli.cli import validate_model_name, validate_temperature
-from lmt_cli.lib import prepare_and_generate_response
-from lmt_cli.templates import TEMPLATES_DIR, get_template_content
+from lmterminal.cli import validate_model_name, validate_temperature
+from lmterminal.lib import prepare_and_generate_response
+from lmterminal.templates import TEMPLATES_DIR, get_template_content
 from strip_tags.lib import strip_tags
 
 

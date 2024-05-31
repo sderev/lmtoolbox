@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.1.31"
+VERSION = "0.1.33"
 
 
 def read_requirements():
@@ -49,7 +49,7 @@ setup(
             "lessonize=llm_toolbox.cli:lessonize",
             "life=llm_toolbox.cli:life",
             "llm-toolbox=llm_toolbox.cli:cli",
-            "lmt=lmt_cli.cli:lmt",
+            "lmt=lmterminal.cli:lmt",
             "pathlearner=llm_toolbox.cli:pathlearner",
             "proofread=llm_toolbox.cli:proofread",
             "shellgenius=shellgenius.cli:shellgenius",
