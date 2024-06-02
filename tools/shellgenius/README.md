@@ -4,7 +4,7 @@ ShellGenius is an intuitive CLI tool designed to enhance your command-line exper
 
 ShellGenius shines even more when you create a very short and practical alias for it. I recommend using `??` as its alias. You can find detailed instructions on [its dedicated repository](https://github.com/sderev/shellgenius)
 
-![shellgenius_3](https://github.com/sderev/llm-toolbox/assets/24412384/9c62d540-1a56-41d6-8800-d3b094a40dfb)
+![shellgenius_3](https://github.com/sderev/lmtoolbox/assets/24412384/9c62d540-1a56-41d6-8800-d3b094a40dfb)
 
 <!-- TOC -->
 ## Table of Contents
@@ -25,20 +25,20 @@ Otherwise, it is packaged in the LLM-Toolbox which you can install with `pip` or
 * `pip`
 
   ```bash
-  python3 -m pip install llm-toolbox
+  python3 -m pip install LMtoolbox
   ```
 
 * `pipx`
 
   ```bash
-  pipx install llm-toolbox
+  pipx install LMtoolbox
   ```
 
 ## Usage
 
 The usage instructions, examples, and additional documentation are provided on the [ShellGenius repository](https://github.com/sderev/shellgenius).
 
-![shellgenius_1](https://github.com/sderev/llm-toolbox/assets/24412384/9b3c99f7-81a7-4305-9b85-cfd01b7252d4)
+![shellgenius_1](https://github.com/sderev/lmtoolbox/assets/24412384/9b3c99f7-81a7-4305-9b85-cfd01b7252d4)
 
 ## Issues
 

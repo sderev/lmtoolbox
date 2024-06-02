@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.1.33"
+VERSION = "0.2"
 
 
 def read_requirements():
@@ -20,44 +20,44 @@ def get_long_description():
 
 
 setup(
-    name="LLM-Toolbox",
-    description="A versatile collection of CLI tools leveraging large language models",
+    name="LMtoolbox",
+    description="A collection of CLI tools leveraging language models",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Sébastien De Revière",
-    url="https://github.com/sderev/llm-toolbox",
+    url="https://github.com/sderev/lmtoolbox",
     project_urls={
-        "Documentation": "https://github.com/sderev/llm-toolbox",
-        "Issues": "http://github.com/sderev/llm-toolbox/issues",
-        "Changelog": "https://github.com/sderev/llm-toolbox/releases",
+        "Documentation": "https://github.com/sderev/lmtoolbox",
+        "Issues": "http://github.com/sderev/lmtoolbox/issues",
+        "Changelog": "https://github.com/sderev/lmtoolbox/releases",
     },
     license="Apache Licence, Version 2.0",
     version=VERSION,
     packages=find_packages(),
     package_data={
-        "llm_toolbox": ["tools/templates/*.yaml"],
+        "lmtoolbox": ["tools/templates/*.yaml"],
     },
     install_requires=read_requirements(),
     entry_points={
         "console_scripts": [
-            "cheermeup=llm_toolbox.cli:cheermeup",
-            "codereview=llm_toolbox.cli:codereview",
-            "commitgen=llm_toolbox.cli:commitgen",
-            "critique=llm_toolbox.cli:critique",
-            "define=llm_toolbox.cli:define",
-            "explain=llm_toolbox.cli:explain",
-            "lessonize=llm_toolbox.cli:lessonize",
-            "life=llm_toolbox.cli:life",
-            "llm-toolbox=llm_toolbox.cli:cli",
+            "cheermeup=lmtoolbox.cli:cheermeup",
+            "codereview=lmtoolbox.cli:codereview",
+            "commitgen=lmtoolbox.cli:commitgen",
+            "critique=lmtoolbox.cli:critique",
+            "define=lmtoolbox.cli:define",
+            "explain=lmtoolbox.cli:explain",
+            "lessonize=lmtoolbox.cli:lessonize",
+            "life=lmtoolbox.cli:life",
+            "lmtoolbox=lmtoolbox.cli:cli",
             "lmt=lmterminal.cli:lmt",
-            "pathlearner=llm_toolbox.cli:pathlearner",
-            "proofread=llm_toolbox.cli:proofread",
+            "pathlearner=lmtoolbox.cli:pathlearner",
+            "proofread=lmtoolbox.cli:proofread",
             "shellgenius=shellgenius.cli:shellgenius",
-            "study=llm_toolbox.cli:study",
-            "summarize=llm_toolbox.cli:summarize",
-            "teachlib=llm_toolbox.cli:teachlib",
-            "thesaurus=llm_toolbox.cli:thesaurus",
-            "translate=llm_toolbox.cli:translate",
+            "study=lmtoolbox.cli:study",
+            "summarize=lmtoolbox.cli:summarize",
+            "teachlib=lmtoolbox.cli:teachlib",
+            "thesaurus=lmtoolbox.cli:thesaurus",
+            "translate=lmtoolbox.cli:translate",
             "vocabmaster=vocabmaster.cli:vocabmaster",
         ]
     },

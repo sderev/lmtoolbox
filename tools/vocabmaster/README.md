@@ -2,7 +2,7 @@
 
 VocabMaster is an CLI tool enhances language learning by recording vocabulary, providing translations and examples, and allowing seamless import into Anki for optimal language learning.
 
-![vocabmaster_translate_japanese](https://github.com/sderev/llm-toolbox/assets/24412384/7bbc6169-1a63-40ec-a057-43eacbb7bd98)
+![vocabmaster_translate_japanese](https://github.com/sderev/lmtoolbox/assets/24412384/7bbc6169-1a63-40ec-a057-43eacbb7bd98)
 
 <!-- TOC -->
 ## Table of Contents
@@ -23,13 +23,13 @@ Otherwise, it is packaged in the LLM-Toolbox which you can install with `pip` or
 * `pip`
 
   ```bash
-  python3 -m pip install llm-toolbox
+  python3 -m pip install LMtoolbox
   ```
 
 * `pipx`
 
   ```bash
-  pipx install llm-toolbox
+  pipx install LMtoolbox
   ```
 
 ## Usage

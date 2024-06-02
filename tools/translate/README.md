@@ -12,20 +12,20 @@ The translate tool takes a sentence and a target language as input and provides 
 
 ## Installation
 
-LLM-Toolbox needs to be installed. You can find [the detailed installation and configuration process on the main page of the repo](https://github.com/sderev/llm-toolbox).
+LLM-Toolbox needs to be installed. You can find [the detailed installation and configuration process on the main page of the repo](https://github.com/sderev/lmtoolbox).
 
 You can install it with `pip` or `pipx` depending on your preferences:
 
 * `pip`
 
     ```bash
-    python3 -m pip install llm-toolbox
+    python3 -m pip install LMtoolbox
     ```
 
 * `pipx`
 
     ```bash
-    pipx install llm-toolbox
+    pipx install LMtoolbox
     ```
 
 ## Usage
@@ -36,7 +36,7 @@ You can install it with `pip` or `pipx` depending on your preferences:
 translate marvelous in Japanese
 ```
 
-![translate_japanese](https://github.com/sderev/llm-toolbox/assets/24412384/f2e36454-5563-4bc7-b332-e8ea3eec6921)
+![translate_japanese](https://github.com/sderev/lmtoolbox/assets/24412384/f2e36454-5563-4bc7-b332-e8ea3eec6921)
 
 **But this is not required:**
 
@@ -44,7 +44,7 @@ translate marvelous in Japanese
 translate to enrapture
 ```
 
-![translate](https://github.com/sderev/llm-toolbox/assets/24412384/6cae15ee-756e-4f31-a0a2-fb7237aafbbb)
+![translate](https://github.com/sderev/lmtoolbox/assets/24412384/6cae15ee-756e-4f31-a0a2-fb7237aafbbb)
 
 In that case, the default pair of languages will be used.
 
@@ -54,7 +54,7 @@ In that case, the default pair of languages will be used.
 cat my_file.txt | translate
 ```
 
-![translate_file_english](https://github.com/sderev/llm-toolbox/assets/24412384/c01568ef-5260-4a59-b987-2a7e7d53f565)
+![translate_file_english](https://github.com/sderev/lmtoolbox/assets/24412384/c01568ef-5260-4a59-b987-2a7e7d53f565)
 
 You won't be able to define a language with the latter example, though.
 

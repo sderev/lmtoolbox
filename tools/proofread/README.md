@@ -14,19 +14,19 @@ The `proofread` tool takes a text as input and provides a corrected version of i
 
 ## Installation
 
-LLM-Toolbox needs to be installed. You can find [the detailed installation and configuration process on the main page of the repo](https://github.com/sderev/llm-toolbox).
+LLM-Toolbox needs to be installed. You can find [the detailed installation and configuration process on the main page of the repo](https://github.com/sderev/lmtoolbox).
 
 You can install it with `pip` or `pipx` depending on your preferences:
 
 * `pip`
 
     ```bash
-    python3 -m pip install llm-toolbox
+    python3 -m pip install LMtoolbox
     ```
 * `pipx`
 
     ```bash
-    pipx install llm-toolbox
+    pipx install LMtoolbox
     ```
 
 ## Usage
@@ -37,7 +37,7 @@ You can pass arguments as the following:
 proofread "Him and me are going to the store."
 ```
 
-![proofread_english_1](https://github.com/sderev/llm-toolbox/assets/24412384/74e14a66-748f-4334-b1b4-cb511c80287c)
+![proofread_english_1](https://github.com/sderev/lmtoolbox/assets/24412384/74e14a66-748f-4334-b1b4-cb511c80287c)
 
 Or via `stdin` by using a pipe:
 
@@ -80,4 +80,4 @@ Reason: The word "misspell" is spelled with double "s", not "i". The correct spe
 
 In such case, you can modify the script and include a statement like this in the prompt: "Respond in French".
 
-![proofread_french](https://github.com/sderev/llm-toolbox/assets/24412384/3bd02d3e-e8ce-4756-a3e1-b4a55475226c)
+![proofread_french](https://github.com/sderev/lmtoolbox/assets/24412384/3bd02d3e-e8ce-4756-a3e1-b4a55475226c)

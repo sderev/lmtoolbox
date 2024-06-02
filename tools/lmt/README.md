@@ -23,13 +23,13 @@ Otherwise, it is packaged in the LLM-Toolbox which you can install with `pip` or
 * `pip`
 
   ```bash
-  python3 -m pip install llm-toolbox
+  python3 -m pip install LMtoolbox
   ```
 
 * `pipx`
 
   ```bash
-  pipx install llm-toolbox
+  pipx install LMtoolbox
   ```
 
 ## Usage
