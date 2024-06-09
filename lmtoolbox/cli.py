@@ -247,6 +247,23 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     else:
         prompt_input = str(diff_output)
 
+    # If *not* in an interactive shell, just generate the commit message and exit
+    if not sys.stdout.isatty():
+        commit_message = process_command(
+            ctx,
+            template="commitgen",
+            emoji=emoji,
+            model=model,
+            prompt_input=prompt_input,
+            temperature=temperature,
+            tokens=tokens,
+            no_stream=True,
+            raw=raw,
+            debug=debug,
+        )
+        sys.exit(0)
+
+    # If in an interactive shell, ask the user if they want to use the generated commit message
     click.echo("Generating commit message...\n---\n\n")
 
     commit_message = process_command(
