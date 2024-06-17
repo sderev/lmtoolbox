@@ -240,6 +240,10 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     except subprocess.CalledProcessError:
         click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
         return
+    else:
+        if not diff_output:
+            click.echo("No staged changes to commit.")
+            sys.exit(0)
 
     if file:
         file_content = file.read()
