@@ -1,4 +1,10 @@
 
+# 2024-06-17
+
+## Fixed
+
+`commitgen` now exits when there are no staged changes to commit.
+
 # 2024-06-09
 
 ## Changed
