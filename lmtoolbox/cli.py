@@ -33,7 +33,7 @@ def install_templates():
         try:
             config = json.load(file)
         except json.JSONDecodeError:
-            click.echo(f"{click.style('Installing templates...', fg='yellow')}")
+            click.echo(click.style("Installing templates...", fg="yellow"))
             config = {}
 
     # Create the 'tools' key if it does not exist
@@ -51,7 +51,7 @@ def install_templates():
             # Update the config file with the copied template
             template_name = file.stem
             config["tools"][template_name] = str(dest_path / file.name)
-            click.echo(f"{click.style(f'Installed `{template_name}` template.', fg='green')}\n")
+            click.echo(click.style(f"Installed `{template_name}` template.", fg="green"))
 
     # Write the updated config back to the file
     with config_file.open("w") as file:
@@ -221,7 +221,7 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     """
     This is the commitgen command. It is used in a git repository.
 
-    The command will generate a detailed commit message based on the changes detected by 'git diff --staged'.
+    The command will generate a detailed commit message based on the changes detected by `git diff --staged`.
 
     Optionally, it can take entire files to provide more context.
 
@@ -231,15 +231,15 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     try:
         subprocess.check_output(["git", "rev-parse", "--is-inside-work-tree"])
     except subprocess.CalledProcessError:
-        click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
-        return
+        # No need to print the error message as it is already printed by git
+        sys.exit(1)
 
     # Check if there are staged changes
     try:
         diff_output = subprocess.check_output(["git", "diff", "--staged"]).decode("utf-8")
-    except subprocess.CalledProcessError:
-        click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
-        return
+    except subprocess.CalledProcessError as error:
+        click.echo(click.style(f"Error occurred: {error}", fg="red"), err=True)
+        sys.exit(1)
     else:
         if not diff_output:
             click.echo("No staged changes to commit.")
@@ -286,8 +286,8 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     # Get only the content of the ChatGPT request
     try:
         commit_message = commit_message[0].strip()
-    except IndexError:
-        click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
+    except IndexError as error:
+        click.echo(click.style(f"Error occurred: {error}", fg="red"), err=True)
         return
     except TypeError:
         click.echo("No commit message generated. Aborting commit.")
@@ -296,8 +296,8 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     # Clean `^M` characters
     commit_message = commit_message.replace("\r", "")
 
+    # Ask the user if they want to use the generated commit message
     click.echo("\n---\n")
-
     choice = click.prompt(
         "Do you want to use this commit message? (yes/edit/no)",
         type=str,
@@ -305,35 +305,35 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
     )
 
     choice = choice.lower()
-    if choice in ["y", "yes", ""]:
+    if choice in ["y", "yes"]:
         choice = "yes"
     elif choice in ["e", "edit"]:
         choice = "edit"
     elif choice in ["n", "no"]:
         choice = "no"
         click.echo(click.style("Aborting commit.", fg="blue"))
-        return
+        sys.exit(0)
     else:
         click.echo("Invalid option. Aborting commit.")
-        return
+        sys.exit(1)
 
-    # Write commit message to a temp file
+    # Write commit message to a tmp file
     with tempfile.NamedTemporaryFile(
         mode="w+", delete=False, prefix="git_commit_message_", suffix=".txt"
-    ) as temp:
-        temp.write(commit_message)
-        temp_path = temp.name
+    ) as tmp:
+        tmp.write(commit_message)
+        tmp_path = tmp.name
 
-    # Open git commit with temp file as template
+    # Open git commit with tmp file as template
     try:
         if choice == "yes":
-            subprocess.run(["git", "commit", "-F", temp_path], check=True)
+            subprocess.run(["git", "commit", "-F", tmp_path], check=True)
         elif choice == "edit":
-            subprocess.run(["git", "commit", "-e", "-t", temp_path], check=True)
-    except subprocess.CalledProcessError:
-        click.echo(f"{click.style('Error occurred: {error}', fg='red')}", err=True)
+            subprocess.run(["git", "commit", "-e", "-t", tmp_path], check=True)
+    except subprocess.CalledProcessError as error:
+        click.echo(click.style(f"Error occurred: {error}", fg="red"), err=True)
     finally:
-        os.remove(temp_path)
+        os.remove(tmp_path)
 
 
 @cli.command()
