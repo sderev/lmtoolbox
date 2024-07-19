@@ -1,5 +1,5 @@
 click
-lmterminal==0.0.35
+lmterminal==0.0.36
 openai<1.0
 PyYAML
 rich
