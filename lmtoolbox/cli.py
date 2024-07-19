@@ -13,7 +13,7 @@ import requests
 import validators
 import yaml
 from lmterminal.cli import validate_model_name, validate_temperature
-from lmterminal.lib import prepare_and_generate_response
+from lmterminal.lib import DEFAULT_MODEL, prepare_and_generate_response
 from lmterminal.templates import TEMPLATES_DIR, get_template_content
 from strip_tags.lib import strip_tags
 
@@ -78,7 +78,7 @@ def common_options(function):
     @click.option(
         "-m",
         "--model",
-        default="gpt-3.5-turbo",
+        default=DEFAULT_MODEL,
         help="The model to use for the requests.",
         callback=validate_model_name,
     )
