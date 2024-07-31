@@ -635,6 +635,9 @@ def process_command(
             prompt_input = sys.stdin.read().strip()
             click.echo()
 
+    if not sys.stdout.isatty():
+        no_stream = True
+
     return prepare_and_generate_response(
         system=None,
         template=template,
