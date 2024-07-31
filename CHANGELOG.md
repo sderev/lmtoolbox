@@ -1,4 +1,10 @@
 
+# 2024-07-31
+
+## Added
+
+* YouTube video summarization by passing a YouTube URL to `summarize`.
+
 # 2024-06-17
 
 ## Fixed
