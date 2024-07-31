@@ -54,7 +54,9 @@ def install_templates():
             # Update the config file with the copied template
             template_name = file.stem
             config["tools"][template_name] = str(dest_path / file.name)
-            click.echo(click.style(f"Installed `{template_name}` template.", fg="green"))
+            click.echo(
+                click.style(f"Installed `{template_name}` template.", fg="green")
+            )
 
     # Write the updated config back to the file
     with config_file.open("w") as file:
@@ -96,7 +98,10 @@ def common_options(function):
     @click.option(
         "--tokens",
         is_flag=True,
-        help=("Count the number of tokens in the prompt, and display the cost of the" " request."),
+        help=(
+            "Count the number of tokens in the prompt, and display the cost of the"
+            " request."
+        ),
     )
     @click.option(
         "--no-stream",
@@ -178,7 +183,9 @@ def define(ctx, model, emoji, word, temperature, tokens, no_stream, raw, debug):
     """
     Get a definition for a word.
     """
-    process_command(ctx, "define", model, emoji, word, temperature, tokens, no_stream, raw, debug)
+    process_command(
+        ctx, "define", model, emoji, word, temperature, tokens, no_stream, raw, debug
+    )
 
 
 @cli.command()
@@ -239,7 +246,9 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
 
     # Check if there are staged changes
     try:
-        diff_output = subprocess.check_output(["git", "diff", "--staged"]).decode("utf-8")
+        diff_output = subprocess.check_output(["git", "diff", "--staged"]).decode(
+            "utf-8"
+        )
     except subprocess.CalledProcessError as error:
         click.echo(click.style(f"Error occurred: {error}", fg="red"), err=True)
         sys.exit(1)
@@ -343,7 +352,9 @@ def commitgen(ctx, model, emoji, file, temperature, tokens, no_stream, raw, debu
 @click.argument("file_to_review", type=click.File("r"), required=False)
 @click.pass_context
 @common_options
-def codereview(ctx, model, emoji, file_to_review, temperature, tokens, no_stream, raw, debug):
+def codereview(
+    ctx, model, emoji, file_to_review, temperature, tokens, no_stream, raw, debug
+):
     """
     Generate a code review for a given file.
 
@@ -377,14 +388,14 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
     prompt_input: str = ""
 
     # Determine what kind of source we are dealing with
-    if video_summarization.is_youtube_video(source_str): # YouTube video
+    if video_summarization.is_youtube_video(source_str):  # YouTube video
         # Fetch the transcript of the YouTube video
         transcript: List[Dict] = video_summarization.get_transcript(source_str)
         # Format the transcript
         prompt_input = video_summarization.format_transcript(transcript)
         # Use the video summarization template for the prompt
         template = "video_summarization"
-    elif validators.url(source_str): # Webpage (hopefully)
+    elif validators.url(source_str):  # Webpage (hopefully)
         try:
             # Fetch the content of the webpage
             source_content = requests.get(source_str, timeout=5).text
@@ -417,7 +428,9 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
 @click.argument("work_to_critique", nargs=-1, required=False)
 @click.pass_context
 @common_options
-def critique(ctx, model, emoji, work_to_critique, temperature, tokens, no_stream, raw, debug):
+def critique(
+    ctx, model, emoji, work_to_critique, temperature, tokens, no_stream, raw, debug
+):
     """
     Generate a critique for a given piece of work.
     """
@@ -496,7 +509,9 @@ def cheermeup(ctx, model, emoji, mood, temperature, tokens, no_stream, raw, debu
 @click.argument("study_material", nargs=-1, required=False)
 @click.pass_context
 @common_options
-def study(ctx, model, emoji, study_material, temperature, tokens, no_stream, raw, debug):
+def study(
+    ctx, model, emoji, study_material, temperature, tokens, no_stream, raw, debug
+):
     """
     Generate study material for a topic or from the content of the content of a file.
     """
@@ -518,7 +533,9 @@ def study(ctx, model, emoji, study_material, temperature, tokens, no_stream, raw
 @click.argument("library_name", nargs=-1, required=False)
 @click.pass_context
 @common_options
-def teachlib(ctx, model, emoji, library_name, temperature, tokens, no_stream, raw, debug):
+def teachlib(
+    ctx, model, emoji, library_name, temperature, tokens, no_stream, raw, debug
+):
     """
     Teach a library.
     """
