@@ -217,7 +217,7 @@ ___
 
 ### Summarize
 
-The [`summarize`](https://github.com/sderev/lmtoolbox/tree/main/tools/summarize) tool provides succinct summaries of a web page, lengthy texts, or the content of given files. It's perfect for extracting key points and crucial information from vast amounts of data, saving users time and effort.
+The [`summarize`](https://github.com/sderev/lmtoolbox/tree/main/tools/summarize) tool provides succinct summaries of a web page, lengthy texts, a YouTube video (via URL), or the content of given files.
 
 ![wikipedia](https://github.com/sderev/lmtoolbox/assets/24412384/0c1988af-d11b-40c0-bf8a-de651315beb3)
 

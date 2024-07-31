@@ -1,10 +1,11 @@
+PyYAML
 click
 lmterminal==0.0.36
 openai<1.0
-PyYAML
 rich
 shellgenius==0.1.15
 strip-tags
 tiktoken
 validators
 vocabmaster==0.1.14
+youtube-transcript-api==0.6.2

@@ -7,6 +7,7 @@ import tempfile
 from datetime import datetime
 from functools import wraps
 from pathlib import Path
+from typing import Dict, List
 
 import click
 import requests
@@ -16,6 +17,8 @@ from lmterminal.cli import validate_model_name, validate_temperature
 from lmterminal.lib import DEFAULT_MODEL, prepare_and_generate_response
 from lmterminal.templates import TEMPLATES_DIR, get_template_content
 from strip_tags.lib import strip_tags
+
+from . import video_summarization
 
 
 def install_templates():
@@ -368,21 +371,37 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
     """
     Summarize the text, the content of a given file, or a webpage (provided as URL).
     """
-    source_str = " ".join(source)
+    template = "summarize"
+    source_str: str = " ".join(source)
 
-    prompt_input = ""
+    prompt_input: str = ""
 
-    if validators.url(source_str):
-        source_content = requests.get(source_str, timeout=5).text
-        prompt_input = strip_tags(input=source_content, minify=True)
+    # Determine what kind of source we are dealing with
+    if video_summarization.is_youtube_video(source_str): # YouTube video
+        # Fetch the transcript of the YouTube video
+        transcript: List[Dict] = video_summarization.get_transcript(source_str)
+        # Format the transcript
+        prompt_input = video_summarization.format_transcript(transcript)
+        # Use the video summarization template for the prompt
+        template = "video_summarization"
+    elif validators.url(source_str): # Webpage (hopefully)
+        try:
+            # Fetch the content of the webpage
+            source_content = requests.get(source_str, timeout=5).text
+        except requests.RequestException as error:
+            click.echo(click.style("Error occurred:", fg="red") + f" {error}", err=True)
+            sys.exit(1)
+        else:
+            prompt_input = strip_tags(input=source_content, minify=True)
     else:
+        # Read the content from `stdin`
         if source:
             content = "".join(source)
             prompt_input += content
 
     process_command(
         ctx,
-        "summarize",
+        template,
         model,
         emoji,
         prompt_input,
@@ -594,7 +613,7 @@ def process_command(
     """
     Process a given command using a specific template and optional lines.
     """
-    if template in ["summarize", "commitgen"]:
+    if template in ["summarize", "commitgen", "video_summarization"]:
         prompt_input = "".join(prompt_input).strip()
     else:
         prompt_input = " ".join(prompt_input).strip()
