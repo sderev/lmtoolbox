@@ -2,10 +2,6 @@
 
 LMtoolbox is an collection of CLI tools using language models designed to modernize your workflow in the terminal. Built using OpenAI's ChatGPT, the tools in this toolbox can generate automatic commit messages, perform dictionary and thesaurus queries, translate text, proofread content, enrich language learning, and automate shell commands, among others. Obviously, you can also interact with ChatGPT directly.
 
-Additionally, the toolbox provides an array of [prompt templates](#prompt-templates) that can serve as a valuable resource, whether you're new to using languages models or you're an experienced user.
-
-I've created video demos to help you see the LMtoolbox in action and understand its wide ranging capabilities. Therefore, I strongly recommend you check out the video demos of the tools to gain a hands on understanding of their potential. After watching the demos, you can return here for a deeper dive into the specific applications and benefits. So, go ahead, watch the demos! 😊
-
 <!-- TOC -->
 ## Table of Contents
 
