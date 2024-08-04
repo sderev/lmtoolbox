@@ -28,7 +28,7 @@ def is_youtube_video(url: str) -> bool:
     """
     if url is None:
         raise (AttributeError("No URL provided."))
-    return YOUTUBE_URL_PATTERN.match(url) is not None
+    return YOUTUBE_URL_PATTERN.match(url.strip()) is not None
 
 
 def get_transcript(

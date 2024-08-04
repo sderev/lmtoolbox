@@ -14,6 +14,7 @@ from lmtoolbox.video_summarization import (
     "url, expected",
     [
         ("https://www.youtube.com/watch?v=dQw4w9WgXcQ", True),
+        (" https://www.youtube.com/watch?v=dQw4w9WgXcQ ", True),  # with spaces around
         ("https://youtu.be/dQw4w9WgXcQ", True),
         ("https://www.youtube.com/embed/dQw4w9WgXcQ", True),
         ("https://youtube.com/shorts/dQw4w9WgXcQ", True),
