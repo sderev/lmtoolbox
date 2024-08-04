@@ -1,4 +1,10 @@
 
+# 2024-08-04
+
+## Fixed
+
+* Improved URL recognition in `is_youtube_video` function to handle leading and trailing whitespace, fixing issues with YouTube URL processing in the `summarize` command.
+
 # 2024-07-31
 
 ## Added
