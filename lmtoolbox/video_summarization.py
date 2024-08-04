@@ -68,6 +68,7 @@ def get_transcript(
     Source for the YouTubeTranscriptApi library documentation:
     https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#api
     """
+    youtube_url = youtube_url.strip()
     video_id = YOUTUBE_URL_PATTERN.match(youtube_url).group("video_id")
 
     try:

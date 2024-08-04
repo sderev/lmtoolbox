@@ -50,6 +50,40 @@ def test_extract_youtube_video_id(youtube_url, expected):
     assert video_id == expected
 
 
+@pytest.mark.parametrize(
+    "youtube_url, expected_video_id",
+    [
+        ("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+        (
+            " https://www.youtube.com/watch?v=dQw4w9WgXcQ ",
+            "dQw4w9WgXcQ",
+        ),  # with spaces around
+        ("https://youtu.be/dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ],
+)
+def test_get_transcript_url_handling(monkeypatch, youtube_url, expected_video_id):
+    def mock_list_transcripts(video_id):
+        assert video_id == expected_video_id
+
+        class MockTranscriptList:
+            def find_transcript(self, _):
+                class MockTranscript:
+                    def fetch(self):
+                        return [{"text": "Mocked transcript"}]
+
+                return MockTranscript()
+
+        return MockTranscriptList()
+
+    monkeypatch.setattr(
+        "youtube_transcript_api.YouTubeTranscriptApi.list_transcripts",
+        mock_list_transcripts,
+    )
+
+    transcript = get_transcript(youtube_url)
+    assert transcript == [{"text": "Mocked transcript"}]
+
+
 # Testing `get_transcript()` function when the YouTube video has transcripts disabled.
 
 
