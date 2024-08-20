@@ -88,7 +88,7 @@ def get_transcript(
     except NoTranscriptFound:
         # If no subtitles are found for the specified languages,
         # default to any generated transcript.
-        transcript = next((t for t in transcript_list if t.is_generated))
+        transcript = next((t for t in transcript_list))
 
     return transcript.fetch()
 
