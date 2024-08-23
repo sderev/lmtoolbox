@@ -3,7 +3,7 @@ click
 lmterminal==0.0.37
 openai<1.0
 rich
-shellgenius==0.1.15
+shellgenius==0.1.16
 strip-tags
 tiktoken
 validators
