@@ -1,4 +1,10 @@
 
+# 2024-08-20
+
+## Fixed
+
+* Fixed error when fetching subtitles for YouTube videos with no auto-generated transcripts but with manually added ones (`summarize`).
+
 # 2024-08-04
 
 ## Fixed
