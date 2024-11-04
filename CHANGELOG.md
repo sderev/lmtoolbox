@@ -1,4 +1,10 @@
 
+# 2024-11-04
+
+## Changed
+
+* Improved error messages for YouTube videos with disabled transcripts by adding detailed explanations (`summarize`).
+
 # 2024-08-20
 
 ## Fixed

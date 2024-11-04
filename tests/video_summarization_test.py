@@ -99,7 +99,16 @@ def assert_transcript_disabled(capsys, excinfo):
 
     # Check the error message is as expected.
     captured = capsys.readouterr()
-    assert "An error occurred: Transcripts are disabled for this video" in captured.err
+    expected_error = (
+        "Error: No transcripts available for this video.\n"
+        "\n"
+        "Possible reasons:\n"
+        "- The video owner has disabled transcripts.\n"
+        "- The video is too recent and automatic captions aren't ready yet (can take several hours).\n"
+        "- The video language isn't supported for automatic captions.\n"
+        "\n"
+    )
+    assert captured.err == expected_error
 
     # Check that the exit code is `1`.
     assert excinfo.value.code == 1

@@ -80,9 +80,18 @@ def get_transcript(
 
     except TranscriptsDisabled:
         click.echo(
-            f"{click.style('An error occurred', fg='red')}: Transcripts are disabled for this video.",
+            f"{click.style('Error', fg='red')}: No transcripts available for this video.",
             err=True,
         )
+        click.echo("", err=True)  # Empty line for better readability.
+        click.echo(
+            f"{click.style('Possible reasons', fg='yellow')}:\n"
+            "- The video owner has disabled transcripts.\n"
+            "- The video is too recent and automatic captions aren't ready yet (can take several hours).\n"
+            "- The video language isn't supported for automatic captions.",
+            err=True,
+        )
+        click.echo("", err=True)  # Empty line for better readability.
         sys.exit(1)
 
     except NoTranscriptFound:
