@@ -1,6 +1,6 @@
 PyYAML
 click
-lmterminal==0.0.39
+lmterminal==0.0.40
 openai<1.0
 rich
 shellgenius==0.1.16
