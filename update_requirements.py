@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-import requests
+import json
+import urllib.error
+import urllib.request
 
 
 def get_latest_version(package_name):
@@ -9,11 +11,24 @@ def get_latest_version(package_name):
     """
     url = f"https://pypi.org/pypi/{package_name}/json"
     try:
-        response = requests.get(url, timeout=5)
-        response.raise_for_status()
-        return response.json()["info"]["version"]
-    except requests.RequestException as error:
+        with urllib.request.urlopen(url) as response:
+            if response.status == 200:
+                data = response.read()
+                decoded_data = data.decode("utf-8")
+                return json.loads(decoded_data)["info"]["version"]
+            else:
+                print(
+                    f"Error fetching version for {package_name}: HTTP {response.status}"
+                )
+                return None
+    except urllib.error.HTTPError as error:
         print(f"Error fetching version for {package_name}: {error}")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON for {package_name}")
+        return None
+    except Exception as err:
+        print(f"An unexpected error occurred for {package_name}: {err}")
         return None
 
 
