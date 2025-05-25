@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.5.12"
+VERSION = "0.5.13"
 
 
 def read_requirements():
