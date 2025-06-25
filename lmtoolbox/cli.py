@@ -7,7 +7,6 @@ import tempfile
 from datetime import datetime
 from functools import wraps
 from pathlib import Path
-from typing import Dict, List
 
 import click
 import requests
@@ -390,7 +389,7 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
     # Determine what kind of source we are dealing with
     if video_summarization.is_youtube_video(source_str):  # YouTube video
         # Fetch the transcript of the YouTube video
-        transcript: List[Dict] = video_summarization.get_transcript(source_str)
+        transcript: list[dict] = video_summarization.get_transcript(source_str)
         # Format the transcript
         prompt_input = video_summarization.format_transcript(transcript)
         # Use the video summarization template for the prompt

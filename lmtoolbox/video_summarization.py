@@ -1,6 +1,5 @@
 import re
 import sys
-from typing import Dict, List, Optional
 
 import click
 from youtube_transcript_api import (
@@ -32,15 +31,15 @@ def is_youtube_video(url: str) -> bool:
 
 
 def get_transcript(
-    youtube_url: str, languages: List[str] = ["en"]
-) -> Optional[List[Dict]]:
+    youtube_url: str, languages: list[str] = ["en"]
+) -> list[dict] | None:
     """
     Gets the transcript of a YouTube video.
     Args:
         youtube_url (str): The URL of the YouTube video.
-        languages (List[str], optional): The list of languages to search for in the transcript. Defaults to ["en"]. Order of preference is preserved: the first language in the list is the most preferred.
+        languages (list[str], optional): The list of languages to search for in the transcript. Defaults to ["en"]. Order of preference is preserved: the first language in the list is the most preferred.
     Returns:
-        List[Dict]: The transcript of the video. Only one language is returned. If the specified languages are not found, the function defaults to any generated transcript.
+        list[dict]: The transcript of the video. Only one language is returned. If the specified languages are not found, the function defaults to any generated transcript.
 
         Each dictionary in the list represents a line in the transcript and has the following keys:
 
@@ -102,11 +101,11 @@ def get_transcript(
     return transcript.fetch()
 
 
-def format_transcript(transcript: Dict, timecode: bool = False) -> str:
+def format_transcript(transcript: dict, timecode: bool = False) -> str:
     """
     Formats the transcript of a YouTube video.
     Args:
-        transcript (Dict): The transcript of the video.
+        transcript (dict): The transcript of the video.
         timecode (bool, optional): Whether to include timecodes in the formatted transcript.
             Defaults to False.
     Returns:
