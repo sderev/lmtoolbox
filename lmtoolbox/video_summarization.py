@@ -30,9 +30,7 @@ def is_youtube_video(url: str) -> bool:
     return YOUTUBE_URL_PATTERN.match(url.strip()) is not None
 
 
-def get_transcript(
-    youtube_url: str, languages: list[str] = ["en"]
-) -> list[dict] | None:
+def get_transcript(youtube_url: str, languages: list[str] = ["en"]) -> list[dict] | None:
     """
     Gets the transcript of a YouTube video.
     Args:
@@ -118,6 +116,5 @@ def format_transcript(transcript: dict, timecode: bool = False) -> str:
         "Hello, world! This is a test."
     """
     return " ".join(
-        f"|{line['start']}| {line['text']}" if timecode else line["text"]
-        for line in transcript
+        f"|{line['start']}| {line['text']}" if timecode else line["text"] for line in transcript
     )
