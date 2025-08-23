@@ -7,5 +7,5 @@ shellgenius==0.1.16
 strip-tags
 tiktoken
 validators
-vocabmaster==0.1.17
+vocabmaster==0.1.18
 youtube-transcript-api==0.6.2
