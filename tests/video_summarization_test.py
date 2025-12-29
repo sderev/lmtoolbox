@@ -115,9 +115,7 @@ def assert_transcript_disabled(capsys, excinfo):
 
 
 @pytest.mark.real
-def test_youtube_transcript_disabled_real(
-    youtube_video_url_with_transcripts_disabled, capsys
-):
+def test_youtube_transcript_disabled_real(youtube_video_url_with_transcripts_disabled, capsys):
     """
     Test the `get_transcript()` function when the YouTube video has transcripts disabled.
 
@@ -182,9 +180,7 @@ def test_youtube_transcript_for_requested_language_not_found_real(
     This test uses the real `youtube_transcript_api` package.
     Therefore, this test takes more time to run.
     """
-    transcript = get_transcript(
-        youtube_video_url_with_no_transcripts_for_english, languages=["en"]
-    )
+    transcript = get_transcript(youtube_video_url_with_no_transcripts_for_english, languages=["en"])
     assert_transcript_for_requested_language_not_found(transcript, capsys)
 
 
@@ -225,9 +221,7 @@ def test_youtube_transcript_for_requested_language_not_found_mock(
         mock_list_transcripts,
     )
 
-    transcript = get_transcript(
-        youtube_video_url_with_no_transcripts_for_english, languages=["en"]
-    )
+    transcript = get_transcript(youtube_video_url_with_no_transcripts_for_english, languages=["en"])
     assert_transcript_for_requested_language_not_found(transcript, capsys)
 
 

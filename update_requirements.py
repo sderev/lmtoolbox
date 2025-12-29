@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 import json
+import sys
 import urllib.error
 import urllib.request
+from pathlib import Path
 
 
 def get_latest_version(package_name):
@@ -17,9 +19,7 @@ def get_latest_version(package_name):
                 decoded_data = data.decode("utf-8")
                 return json.loads(decoded_data)["info"]["version"]
             else:
-                print(
-                    f"Error fetching version for {package_name}: HTTP {response.status}"
-                )
+                print(f"Error fetching version for {package_name}: HTTP {response.status}")
                 return None
     except urllib.error.HTTPError as error:
         print(f"Error fetching version for {package_name}: {error}")
@@ -36,6 +36,13 @@ def update_requirements(packages_to_update, requirements_path="requirements.txt"
     """
     Updates the requirements.txt with the latest versions of the specified packages.
     """
+    if not Path(requirements_path).exists():
+        print(
+            "requirements.txt has been removed. Use `uv add -U <package>` to update "
+            "dependencies in pyproject.toml.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     with open(requirements_path, "r", encoding="UTF-8") as file:
         lines = file.readlines()
 

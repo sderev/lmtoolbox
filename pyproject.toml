@@ -1,0 +1,92 @@
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[project]
+name = "LMtoolbox"
+version = "0.5.19"
+description = "A collection of CLI tools leveraging language models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "Sébastien De Revière" }]
+dependencies = [
+    "PyYAML",
+    "click",
+    "lmterminal==0.0.43",
+    "openai<1.0",
+    "requests",
+    "rich",
+    "shellgenius==0.1.16",
+    "strip-tags",
+    "tiktoken",
+    "validators",
+    "vocabmaster==0.2.0",
+    "youtube-transcript-api==0.6.2",
+]
+
+[project.urls]
+Documentation = "https://github.com/sderev/lmtoolbox"
+Issues = "http://github.com/sderev/lmtoolbox/issues"
+Changelog = "https://github.com/sderev/lmtoolbox/releases"
+
+[project.scripts]
+cheermeup = "lmtoolbox.cli:cheermeup"
+codereview = "lmtoolbox.cli:codereview"
+commitgen = "lmtoolbox.cli:commitgen"
+critique = "lmtoolbox.cli:critique"
+define = "lmtoolbox.cli:define"
+explain = "lmtoolbox.cli:explain"
+lessonize = "lmtoolbox.cli:lessonize"
+life = "lmtoolbox.cli:life"
+lmtoolbox = "lmtoolbox.cli:cli"
+lmt = "lmterminal.cli:lmt"
+pathlearner = "lmtoolbox.cli:pathlearner"
+proofread = "lmtoolbox.cli:proofread"
+shellgenius = "shellgenius.cli:shellgenius"
+study = "lmtoolbox.cli:study"
+summarize = "lmtoolbox.cli:summarize"
+teachlib = "lmtoolbox.cli:teachlib"
+thesaurus = "lmtoolbox.cli:thesaurus"
+translate = "lmtoolbox.cli:translate"
+vocabmaster = "vocabmaster.cli:vocabmaster"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "scriv[toml]>=1.5.0",
+]
+
+[tool.ruff]
+line-length = 100
+lint.extend-select = ["I001"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = [
+    "real: marks tests that use real API calls",
+    "mock: marks tests that use mocked API calls",
+]
+
+[tool.scriv]
+version = "literal: pyproject.toml: project.version"
+format = "md"
+md_header_level = 2
+output_file = "CHANGELOG.md"
+fragment_directory = "changelog.d"
+new_fragment_template = "file: changelog.d/templates/fragment.md.j2"
+categories = [
+    "Added",
+    "Changed",
+    "Deprecated",
+    "Removed",
+    "Fixed",
+    "Security",
+]
+entry_title_template = "{{ version }} - {{ date.strftime('%Y-%m-%d') }}"
+
+[tool.uv.build-backend]
+module-root = ""
+module-name = "lmtoolbox"
