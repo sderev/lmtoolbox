@@ -1,0 +1,46 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint and format check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Run ruff linter
+        run: uvx ruff check .
+
+      - name: Run ruff formatter check
+        run: uvx ruff format --check .
+
+      - name: Validate pyproject.toml
+        run: |
+          uv tool install validate-pyproject
+          uvx validate-pyproject pyproject.toml
+
+      - name: Validate changelog fragments
+        run: |
+          set -euo pipefail
+          if ! uv run --group dev scriv print; then
+            status=$?
+            if [ "$status" -eq 2 ]; then
+              echo "::notice::No changelog fragments to collect"
+              exit 0
+            fi
+            exit "$status"
+          fi
