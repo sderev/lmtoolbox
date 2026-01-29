@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Local CI for Python projects.
+# - Default skips live/real tests.
+# - Opt in with: GATE_REAL=1 gate
+# - Or pass custom args: GATE_PYTEST_ARGS='-m real' gate
+
+uvx ruff format --check .
+uvx ruff check .
+
+py_versions=(3.10 3.11 3.12 3.13 3.14)
+
+pytest_args=()
+if [ "${GATE_REAL:-}" != "1" ] && [ "${GATE_REAL:-}" != "true" ]; then
+    pytest_args+=("-m" "not real")
+fi
+if [ -n "${GATE_PYTEST_ARGS:-}" ]; then
+    read -r -a extra_args <<<"${GATE_PYTEST_ARGS}"
+    pytest_args+=("${extra_args[@]}")
+fi
+
+if [ -d "tests" ]; then
+    for py in "${py_versions[@]}"; do
+        echo "Testing with Python $py..."
+        uv run --python "$py" --group dev -- pytest -q tests/ "${pytest_args[@]}"
+    done
+else
+    echo "Warning: no tests/ directory; skipping pytest" >&2
+fi
