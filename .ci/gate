@@ -2,8 +2,10 @@
 set -euo pipefail
 
 # Local CI for Python projects.
-# - Default skips live/real tests.
+# - Default skips live/real tests and network tests.
+# - Real tests may call external APIs and require credentials.
 # - Opt in with: GATE_REAL=1 gate
+# - Opt in for network tests with: GATE_NETWORK=1 gate
 # - Or pass custom args: GATE_PYTEST_ARGS='-m real' gate
 
 uvx ruff format --check .
@@ -12,8 +14,17 @@ uvx ruff check .
 py_versions=(3.10 3.11 3.12 3.13 3.14)
 
 pytest_args=()
+marker_expr=()
 if [ "${GATE_REAL:-}" != "1" ] && [ "${GATE_REAL:-}" != "true" ]; then
-    pytest_args+=("-m" "not real")
+    marker_expr+=("not real")
+fi
+if [ "${GATE_NETWORK:-}" != "1" ] && [ "${GATE_NETWORK:-}" != "true" ]; then
+    marker_expr+=("not network")
+fi
+if [ "${#marker_expr[@]}" -gt 0 ]; then
+    marker_joined=$(printf "%s and " "${marker_expr[@]}")
+    marker_joined=${marker_joined% and }
+    pytest_args+=("-m" "$marker_joined")
 fi
 if [ -n "${GATE_PYTEST_ARGS:-}" ]; then
     read -r -a extra_args <<<"${GATE_PYTEST_ARGS}"
