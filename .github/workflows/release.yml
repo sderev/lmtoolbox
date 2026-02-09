@@ -8,6 +8,24 @@ permissions:
   contents: read
 
 jobs:
+  release-notes:
+    name: Populate release notes from CHANGELOG.md
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Update release body
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version="${TAG#v}"
+          python3 .ci/changelog-notes "$version" > /tmp/release-notes.md
+          gh release edit "$TAG" --notes-file /tmp/release-notes.md
+
   build:
     name: Build distribution packages
     runs-on: ubuntu-latest
@@ -40,6 +58,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    environment:
+      name: release
+      url: https://pypi.org/project/wslshot/
     steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
