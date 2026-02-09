@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+"""Extract release notes for a version from CHANGELOG.md.
+
+Reads the matching ``## <version>`` section, converts RST-style underlined
+category headers to Markdown ``###`` headers, and prints the result.
+
+Usage::
+
+    .ci/changelog-notes <version> [changelog-path]
+    .ci/changelog-notes 0.1.1
+"""
+
+import re
+import sys
+from pathlib import Path
+
+
+def extract_notes(changelog: str, version: str) -> str | None:
+    """Return the release-notes section for *version*, or ``None``."""
+    header = re.compile(rf"^## {re.escape(version)}\b[^\n]*$", re.MULTILINE)
+    match = header.search(changelog)
+    if not match:
+        return None
+
+    start = match.end() + 1  # skip past header line's newline
+
+    # The section ends at the next version header or ``<a id=`` anchor.
+    boundary = re.compile(r"^(?:## |<a id=)", re.MULTILINE)
+    end_match = boundary.search(changelog, start)
+    raw = changelog[start : end_match.start()] if end_match else changelog[start:]
+
+    # Convert RST underlined headers (``Category\n-----``) → ``### Category``
+    notes = re.sub(r"^(.+)\n-{3,}$", r"### \1", raw, flags=re.MULTILINE)
+    return notes.strip()
+
+
+def main() -> int:
+    if len(sys.argv) < 2:
+        print("usage: changelog-notes <version> [changelog]", file=sys.stderr)
+        return 2
+
+    version = sys.argv[1]
+    path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("CHANGELOG.md")
+
+    if not path.is_file():
+        print(f"error: {path} not found", file=sys.stderr)
+        return 1
+
+    notes = extract_notes(path.read_text(), version)
+    if notes is None:
+        print(f"error: version {version} not found in {path}", file=sys.stderr)
+        return 1
+
+    print(notes)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
