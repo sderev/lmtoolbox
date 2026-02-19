@@ -60,7 +60,7 @@ jobs:
       id-token: write
     environment:
       name: release
-      url: https://pypi.org/project/wslshot/
+      url: https://pypi.org/project/lmtoolbox/
     steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
