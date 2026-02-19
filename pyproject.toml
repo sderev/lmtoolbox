@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "LMtoolbox"
-version = "0.5.19"
+version = "0.5.20"
 description = "A collection of CLI tools leveraging language models"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -21,7 +21,7 @@ dependencies = [
     "strip-tags",
     "tiktoken",
     "validators",
-    "vocabmaster==0.2.0",
+    "vocabmaster",
     "youtube-transcript-api==0.6.2",
 ]
 
