@@ -1,4 +1,13 @@
 
+<a id='changelog-0.6.0'></a>
+## 0.6.0 - 2026-04-09
+
+Changed
+-------
+* Update `shellgenius` to `>=0.2.0`.
+
+<!-- scriv-end-here -->
+
 # 2024-11-04
 
 ## Changed

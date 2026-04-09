@@ -24,8 +24,9 @@ def extract_notes(changelog: str, version: str) -> str | None:
 
     start = match.end() + 1  # skip past header line's newline
 
-    # The section ends at the next version header or ``<a id=`` anchor.
-    boundary = re.compile(r"^(?:## |<a id=)", re.MULTILINE)
+    # The section ends at the next version header, ``<a id=`` anchor, or
+    # trailing scriv marker.
+    boundary = re.compile(r"^(?:## |<a id=|<!-- scriv-end-here -->)", re.MULTILINE)
     end_match = boundary.search(changelog, start)
     raw = changelog[start : end_match.start()] if end_match else changelog[start:]
 

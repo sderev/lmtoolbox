@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "LMtoolbox"
-version = "0.5.20"
+version = "0.6.0"
 description = "A collection of CLI tools leveraging language models"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,11 +13,10 @@ authors = [{ name = "Sébastien De Revière" }]
 dependencies = [
     "PyYAML",
     "click",
-    "lmterminal==0.0.43",
-    "openai<1.0",
+    "lmterminal==0.0.44",
     "requests",
     "rich",
-    "shellgenius==0.1.16",
+    "shellgenius>=0.2.0",
     "strip-tags",
     "tiktoken",
     "validators",
