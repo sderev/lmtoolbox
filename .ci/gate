@@ -11,6 +11,17 @@ set -euo pipefail
 uvx ruff format --check .
 uvx ruff check .
 
+# Bundle resolution checks are local release hygiene, not everyday test work.
+# Run them when dependency metadata changed on the branch, or force them with:
+# GATE_BUNDLE_GUARD=1 gate
+bundle_guard_args=()
+if [ "${GATE_BUNDLE_GUARD:-}" = "1" ] || [ "${GATE_BUNDLE_GUARD:-}" = "true" ]; then
+    bundle_guard_args+=("--force")
+fi
+# Run the guard with a uv-managed interpreter without loading the project, so the guard itself
+# stays responsible for checking whether `uv.lock` is current.
+uv run --python 3.11 --managed-python --no-project .ci/bundle_guard.py "${bundle_guard_args[@]}"
+
 py_versions=(3.10 3.11 3.12 3.13 3.14)
 
 pytest_args=()
