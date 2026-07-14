@@ -62,6 +62,12 @@ jobs:
       name: release
       url: https://pypi.org/project/lmtoolbox/
     steps:
+      # Managed by `update-pypi-release-guards`.
+      - name: Checkout release history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -81,12 +87,35 @@ jobs:
         env:
           TAG: ${{ github.event.release.tag_name }}
         run: |
-          if [[ "$TAG" =~ ^v?[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "publish=true" >>"$GITHUB_OUTPUT"
+          set -euo pipefail
+          if [[ ! "$TAG" =~ ^v?[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::notice::Skipping publish for non-stable tag: $TAG"
+            echo "publish=false" >>"$GITHUB_OUTPUT"
             exit 0
           fi
-          echo "::notice::Skipping publish for non-stable tag: $TAG"
-          echo "publish=false" >>"$GITHUB_OUTPUT"
+
+          if ! git fetch --no-tags origin main; then
+            echo "::error::Unable to fetch origin/main for release ancestry check"
+            exit 1
+          fi
+          if ! git fetch --force origin "refs/tags/${TAG}:refs/tags/${TAG}"; then
+            echo "::error::Unable to fetch release tag ${TAG}"
+            exit 1
+          fi
+          if ! tag_commit="$(git rev-parse "refs/tags/${TAG}^{commit}" 2>/dev/null)"; then
+            echo "::error::Release tag ${TAG} does not resolve to a commit"
+            exit 1
+          fi
+          if ! main_commit="$(git rev-parse "refs/remotes/origin/main^{commit}" 2>/dev/null)"; then
+            echo "::error::Unable to resolve origin/main for release ancestry check"
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor "$tag_commit" "$main_commit"; then
+            echo "::error::Release tag ${TAG} (${tag_commit}) is not reachable from origin/main (${main_commit})"
+            exit 1
+          fi
+
+          echo "publish=true" >>"$GITHUB_OUTPUT"
 
       - name: Publish to PyPI with uv
         if: steps.stable_tag.outputs.publish == 'true'
