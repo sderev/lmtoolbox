@@ -30,7 +30,8 @@ def is_youtube_video(url: str) -> bool:
     return YOUTUBE_URL_PATTERN.match(url.strip()) is not None
 
 
-def get_transcript(youtube_url: str, languages: list[str] = ["en"]) -> list[dict] | None:
+# Preserve the public default; this function only reads the language list.
+def get_transcript(youtube_url: str, languages: list[str] = ["en"]) -> list[dict] | None:  # noqa: B006
     """
     Gets the transcript of a YouTube video.
     Args:
@@ -94,7 +95,7 @@ def get_transcript(youtube_url: str, languages: list[str] = ["en"]) -> list[dict
     except NoTranscriptFound:
         # If no subtitles are found for the specified languages,
         # default to any generated transcript.
-        transcript = next((t for t in transcript_list))
+        transcript = next(t for t in transcript_list)
 
     return transcript.fetch()
 

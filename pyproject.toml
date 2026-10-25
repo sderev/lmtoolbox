@@ -60,7 +60,8 @@ dev = [
 
 [tool.ruff]
 line-length = 100
-lint.extend-select = ["I001"]
+# Keep timezone checks explicit across Ruff versions; exceptions document local-date semantics.
+lint.extend-select = ["I001", "DTZ005", "DTZ007"]
 
 [tool.pytest.ini_options]
 addopts = "-ra"

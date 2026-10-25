@@ -27,7 +27,8 @@ def get_latest_version(package_name):
     except json.JSONDecodeError:
         print(f"Error decoding JSON for {package_name}")
         return None
-    except Exception as err:
+    # Keep the updater's fallback for unexpected fetch/metadata failures.
+    except Exception as err:  # noqa: BLE001
         print(f"An unexpected error occurred for {package_name}: {err}")
         return None
 

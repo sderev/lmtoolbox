@@ -559,7 +559,8 @@ def life(ctx, reset, model, emoji, temperature, tokens, no_stream, raw, debug):
                 )
             else:
                 date_of_birth_str = user_info["date_of_birth"]
-            date_of_birth = datetime.strptime(date_of_birth_str, "%Y-%m-%d")
+            # Keep birth dates naive for the existing local calendar calculation.
+            date_of_birth = datetime.strptime(date_of_birth_str, "%Y-%m-%d")  # noqa: DTZ007
 
         except ValueError:
             click.echo("Please enter a valid date.")
@@ -576,7 +577,8 @@ def life(ctx, reset, model, emoji, temperature, tokens, no_stream, raw, debug):
     with open(template_path, "w", encoding="UTF-8") as file:
         yaml.dump(template_file, file, default_flow_style=False)
 
-    remaining_days = life_expectancy - (datetime.now() - date_of_birth).days
+    # Match the naive birth date and preserve local-time day counting.
+    remaining_days = life_expectancy - (datetime.now() - date_of_birth).days  # noqa: DTZ005
     percentage = f"{(remaining_days / life_expectancy) * 100:.2f}"
 
     system = f"{system}".format(
