@@ -15,9 +15,8 @@ import yaml
 from lmterminal.cli import validate_model_name, validate_temperature
 from lmterminal.lib import DEFAULT_MODEL, prepare_and_generate_response
 from lmterminal.templates import TEMPLATES_DIR, get_template_content
-from strip_tags.lib import strip_tags
 
-from . import video_summarization
+from . import video_summarization, webpage
 
 
 def install_templates():
@@ -391,7 +390,7 @@ def summarize(ctx, model, emoji, source, temperature, tokens, no_stream, raw, de
             click.echo(click.style("Error occurred:", fg="red") + f" {error}", err=True)
             sys.exit(1)
         else:
-            prompt_input = strip_tags(input=source_content, minify=True)
+            prompt_input = webpage.extract_text(source_content)
     else:
         # Read the content from `stdin`
         if source:

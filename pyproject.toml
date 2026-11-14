@@ -7,7 +7,7 @@ name = "LMtoolbox"
 version = "0.6.0"
 description = "A collection of CLI tools leveraging language models"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11.5"
 license = "Apache-2.0"
 authors = [{ name = "Sébastien De Revière" }]
 dependencies = [
@@ -17,6 +17,7 @@ dependencies = [
     "requests",
     "rich",
     "shellgenius>=0.2.0",
+    "soupsieve>=4.1",
     "strip-tags",
     "tiktoken",
     "validators",

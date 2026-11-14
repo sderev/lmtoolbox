@@ -11,7 +11,7 @@ set -euo pipefail
 uvx ruff format --check .
 uvx ruff check .
 
-py_versions=(3.10 3.11 3.12 3.13 3.14)
+py_versions=(3.11.5 3.12 3.13 3.14)
 
 pytest_args=()
 marker_expr=()

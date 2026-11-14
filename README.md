@@ -41,6 +41,8 @@ These templates, found in the [`prompt-templates/`](https://github.com/sderev/lm
 
 ## Installation
 
+LMtoolbox requires Python 3.11.5 or later.
+
 ### pip
 
 ```bash
@@ -214,6 +216,10 @@ ___
 ### Summarize
 
 The [`summarize`](https://github.com/sderev/lmtoolbox/tree/main/tools/summarize) tool provides succinct summaries of a web page, lengthy texts, a YouTube video (via URL), or the content of given files.
+
+For webpage summaries, parsed HTML `<template>` elements are excluded. The HTML
+parser may lose template boundaries in contexts such as tables and selects, so
+content in those templates can appear in summaries.
 
 ![wikipedia](https://github.com/sderev/lmtoolbox/assets/24412384/0c1988af-d11b-40c0-bf8a-de651315beb3)
 
